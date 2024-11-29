@@ -1,21 +1,11 @@
+# Python Code-Formatierung
 [tool.black]
 line-length = 100
 target-version = ['py313']
 include = '\.pyx?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
+exclude = '/(\.git|\.hg|\.mypy_cache|\.tox|\.venv|_build|dist)/'
 
+# Import-Sortierung
 [tool.isort]
 profile = "black"
 line_length = 100
@@ -25,6 +15,7 @@ force_grid_wrap = 0
 use_parentheses = true
 ensure_newline_before_comments = true
 
+# Typ-Prüfung
 [tool.mypy]
 python_version = "3.13"
 warn_return_any = true

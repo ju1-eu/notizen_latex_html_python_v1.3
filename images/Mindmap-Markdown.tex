@@ -1,0 +1,63 @@
+\documentclass[tikz, border=10pt]{standalone}
+\usepackage[T1]{fontenc} % Verwendung von Vektorschriften
+\usepackage[ngerman]{babel} % Deutsche Rechtschreibung und Silbentrennung
+\usepackage{tikz}
+\usetikzlibrary{mindmap, shapes.geometric} % Import Bibliothek
+
+% Farbdefinitionen
+\definecolor{MindMapBlue}{RGB}{0, 105, 180}
+\definecolor{MindMapGreen}{RGB}{76, 153, 0}
+\definecolor{MindMapRed}{RGB}{237, 28, 36}
+\definecolor{MindMapYellow}{RGB}{255, 242, 0}
+\definecolor{MindMapOrange}{RGB}{255, 127, 39}
+\definecolor{MindMapPurple}{RGB}{150, 111, 214}
+\definecolor{MindMapGray}{RGB}{195, 195, 195}
+\definecolor{MindMapWhite}{RGB}{255, 255, 255}
+\definecolor{MindMapBlack}{RGB}{0, 0, 0}
+
+\begin{document}
+\begin{tikzpicture}[mindmap, grow cyclic,
+                    every node/.style={concept, fill=none, text width=2.5cm, font=\small, align=center, line width=0.5pt},
+                    level 1/.append style={sibling angle=360/4},
+                    level 2/.append style={level distance=4cm, sibling angle=45},
+                    level 3/.style={sibling angle=45}, % Unterunterknoten
+                    edge from parent/.style={concept color=MindMapBlack, line width=0.5pt},
+                    text only/.style={draw=none, rectangle, text=MindMapBlack}]
+
+% Hauptknoten
+\node[text width=4cm, font=\large\bfseries]{Markdown}
+    child [concept color=MindMapGreen] {
+      node {Leichtgewichtige Auszeichnungssprache}
+        child { node [text only] {Ziel: Vereinfachung der Webinhalte-Erstellung} }
+    }
+    child [concept color=MindMapRed] {
+      node {Schlüsselkonzepte}
+        child { node {Einfachheit}
+          child { node [text only] {Syntax} }
+          child { node [text only] {Intuitiv} }
+        }
+        child { node {Lesbarkeit}
+        }
+        child { node {Konvertierbarkeit}
+        }
+        child { node {Flexibilität}
+        }
+        child { node {Erweiterbarkeit}
+        }
+    }
+    child [concept color=MindMapBlue] {
+      node {Anwendung}
+        child { node [text only] {Webcontent-Erstellung}
+        }
+        child { node [text only] {Dokumentation}
+        }
+        child { node [text only] {Notizen und Bücher}
+        }
+    }
+    child [concept color=MindMapOrange] {
+      node {Entwicklung und Geschichte}
+        child { node [text only] {John Gruber mit Aaron Swartz} }
+        child { node [text only] {2004} }
+    };
+\end{tikzpicture}
+\end{document}

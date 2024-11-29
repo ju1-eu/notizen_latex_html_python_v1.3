@@ -78,8 +78,8 @@ PYTHON_FILES=(
     "$SCRIPT_DIR/pdf_extractor.py"
     "$SCRIPT_DIR/create_gallery.py"
     "$SCRIPT_DIR/youtube_text_extraktor.py"
-    "image_resizer.py"
-    "scriptauswahl.py"
+    "$SCRIPT_DIR/image_resizer.py"
+    "$SCRIPT_DIR/scriptauswahl.py"
 )
 
 # Prüfe Voraussetzungen

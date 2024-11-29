@@ -1,15 +1,23 @@
 # requirements-dev.txt
-# Entwicklungswerkzeuge
--r requirements.txt  # Importiert alle Produktionsabhängigkeiten
-black==24.10.0
-flake8==7.1.1
-isort==5.13.2
-mypy==1.13.0
+# Entwicklungswerkzeuge mit Fokus auf Code-Qualität
+
+# Code-Formatierung & Linting
+black==24.10.0         # Code-Formatierung
+flake8==7.1.1         # Style Guide
+isort==5.13.2         # Import-Sortierung
+pycodestyle==2.12.1   # PEP 8 Style
+pyflakes==3.2.0       # Syntax-Check
+
+# Typ-Prüfung
+mypy==1.13.0            # Statische Typ-Prüfung
 mypy-extensions==1.0.0
-pipdeptree==2.24.0
-pycodestyle==2.12.1
-pyflakes==3.2.0
+typing_extensions==4.12.2
 types-PyYAML==6.0.12.20240917
 types-requests==2.32.0.20241016
 types-tqdm==4.67.0.20241119
-typing_extensions==4.12.2
+
+# Tools
+pipdeptree==2.24.0     # Abhängigkeitsanalyse
+
+# Basis-Abhängigkeiten
+-r requirements.txt

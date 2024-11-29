@@ -1,20 +1,12 @@
-# Auto detect text files and perform LF normalization
+# Textdateien
 * text=auto
-
-# PowerShell-Skripte
 *.ps1 text eol=crlf
-
-# Bash-Skripte
 *.sh text eol=lf
-
-# Python
 *.py text diff=python
-
-# Documentation
 *.md text diff=markdown
 *.tex text diff=tex
 
-# Binary files
+# Binärdateien
 *.pdf binary
 *.png binary
 *.jpg binary
