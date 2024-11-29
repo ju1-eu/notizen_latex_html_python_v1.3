@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eine Webseite für die Navigation.">
+    <title>Navigationsseite</title>
+    <link rel="stylesheet" href="./navigation.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--
+        github-dark-dimmed.min.css
+        github-dark.min.css
+        github.min.css
+        default.min.css
+    -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <header role="banner" class="header-wrapper">
+        <h1>Navigationsseite</h1>
+    </header>
+    <nav class="main-navigation" role="navigation">
+        <ul>
+            {% for dateiname in dateinamen %}
+                <li><a href="html/{{ dateiname }}">{{ dateiname }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+    <main role="main">
+    </main>
+    <footer role="contentinfo">
+        <div id="footer-content">
+            &copy; 2024
+        </div>
+    </footer>
+</div>
+<!--javascript-->
+<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
+<script>hljs.highlightAll();</script>
+</body>
+</html>

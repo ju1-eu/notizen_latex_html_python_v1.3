@@ -1,0 +1,4 @@
+ORDNERPFAD: '../html'
+VORLAGENPFAD: '../content'
+VORLAGENNAME: 'vorlage-nav.html'
+AUSGABE_DATEINAME: '../NAVIGATION.html'

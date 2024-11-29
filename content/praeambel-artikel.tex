@@ -1,0 +1,101 @@
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+
+% Schrift
+%\usepackage{lmodern}
+\usepackage[osf,sc]{mathpazo}
+\usepackage[scale=.9,semibold]{sourcecodepro}
+\usepackage[osf]{sourcesanspro}
+
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\usepackage[table,dvipsnames,usenames]{xcolor}
+\usepackage{textcase}
+\usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{caption, booktabs}
+\usepackage{graphicx}
+\usepackage{scrhack}
+\usepackage{url}%% Links
+\usepackage[inline]{enumitem}
+\usepackage{pifont}
+\usepackage{eurosym}% \euro 20,-
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{array}            % Extending the array and tabular environments
+\usepackage{chngcntr}         % Change the resetting of counters
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{icomma}%Dezimaltrennzeichen
+\usepackage{multimedia}%Video: \movie[externalviewer]{(video.mov)}{video.mov}
+\usepackage{epstopdf}
+\usepackage{footnote}
+\usepackage{qrcode}% Anwendung: \qrcode[hyperlink,level=Q,version=2,height=1cm]{\website}
+\usepackage{underscore}% Unterstrich ____
+
+% PDF Dokumente einbinden
+\usepackage{pdfpages}% \includepdf[pages=-]{Tabellen/Excel.pdf}
+\RequirePackage{lastpage}  % Pagecounter
+
+\addto\captionsngerman{%
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+}
+
+% listings
+\usepackage{listings}
+\lstset{basicstyle=\linespread{1}\ttfamily\small,floatplacement=!htb,captionpos=t,abovecaptionskip=.5\baselineskip,belowcaptionskip=.5\baselineskip,upquote=true,showstringspaces=false,inputencoding=utf8,tabsize=4,
+    	keywordstyle=\bfseries ,
+	commentstyle=\color{rot5},
+	stringstyle=\color{orange},
+	breaklines=true,
+  	postbreak=\mbox{\textcolor{black}{$\hookrightarrow$}\space},
+	breakatwhitespace=false
+}
+\lstset{literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1 {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1 {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1 {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1 {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1 {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1 {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1 {€}{{\EUR}}1 {£}{{\pounds}}1 {~}{{\textasciitilde}}1 {-}{{-}}1 }
+
+% bibliography
+\usepackage[
+    bibencoding=utf8,
+    backend=biber,% bibtex, biber
+    backref=false,backrefstyle=three+,url=true,urldate=comp,abbreviate=false,maxnames=20
+]{biblatex} %Paket laden
+\DeclareBibliographyCategory{cited}
+\let\defaultcite\cite\renewcommand*\cite[2][]{\addtocategory{cited}{#2}\defaultcite[#1]{#2}}
+\let\defaulttextcite\textcite\renewcommand*\textcite[2][]{\addtocategory{cited}{#2}\defaulttextcite[#1]{#2}}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\AfterPackage{biblatex}{
+	\PreventPackageFromLoading[\errmessage{Sie haben versucht, das Cite-Paket zu laden, das nicht mit biblatex kompatibel ist.}]{cite}
+}
+
+\hypersetup{%
+	%pdftitle={\titel},
+	%pdfsubject={Latex},
+	%pdfauthor={\autor},
+	%pdfcreator={\autor},
+	bookmarksnumbered=true,
+	breaklinks=true,
+	%colorlinks=true,
+	linkcolor=rot5,
+	filecolor=blau5,
+	urlcolor=blau5,
+	citecolor=ForestGreen
+}
+
+\linespread{1.1}
+\setlist{itemsep=0pt}
+\widowpenalty10000
+\clubpenalty10000
+\tolerance1000

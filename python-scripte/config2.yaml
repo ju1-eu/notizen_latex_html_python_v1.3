@@ -1,0 +1,7 @@
+VERZEICHNIS_PFAD: './html'
+SUCH_MUSTER_EPS: 'src="images/(.*?)\.eps"'
+SUCH_MUSTER_PDF: 'src="images/(.*?)\.pdf"'
+ERSETZ_MUSTER_EPS: 'src="./images/\1.svg"'
+ERSETZ_MUSTER_PDF: 'src="./images/\1.webp"'
+VORLAGE_PFAD: 'content/vorlage-main.html'
+PLATZHALTER: '<!-- PLATZHALTER -->'

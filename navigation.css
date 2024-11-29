@@ -1,0 +1,312 @@
+/* Variablen */
+:root {
+  --text-color: #333; /* Dunklere, gut lesbare Farbe */
+  --hover-color: #a30404; /* Farbe beim Überfahren mit der Maus */
+  --link-color: #007bff; /* Schönes Blau für Links */
+  --visited-link-color: #d63447; /* Schönes Rot für besuchte Links */
+  --background-color: #f4f4f4;
+  --container-background-color: #fff;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --font-size-h1: 2em; /* Vergrößerte Schriftgröße für bessere Sichtbarkeit */
+  --font-size-link: 1em;
+}
+
+/* Allgemeine Stile */
+body {
+  font-family: Arial, sans-serif; /* Leicht lesbare Schriftart */
+  background-color: var(--background-color);
+  color: var(--text-color); /* Dunklere Farbe für besseren Kontrast */
+  font-size: 16px; /* Standardgröße von 16px für bessere Lesbarkeit */
+  line-height: 1.5; /* Verbesserte Zeilenhöhe */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: var(--container-background-color);
+  box-shadow: 0 0 1em var(--box-shadow-color);
+  text-align: justify; /* Blocksatz für einen sauberen Rand */
+}
+
+/* Header-Stile */
+.header-wrapper {
+  background-color: #010625;
+  color: #a30404;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%; /* Maximale Breite des Headers auf 100% des Containers setzen */
+}
+
+header {
+  background-color: #010625;
+  color: var(--text-color);
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: var(--font-size-h1);
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 15px;
+  color: var(
+    --text-color
+  ); /* Verwendung der Farbvariable, die zuvor definiert wurde */
+  text-decoration: none; /* Entfernt den Unterstrich */
+  transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang für Farbänderungen */
+}
+
+.nav-link:hover {
+  color: var(--hover-color) !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  text-decoration: underline; /* Unterstrich beim Überfahren mit der Maus hinzufügen */
+}
+
+.main-navigation ul li {
+  margin-bottom: 15px; /* Etwas mehr Abstand zwischen den Links */
+  color: var(--text-color);
+  transition: all 0.3s ease; /* Weicher Übergangseffekt */
+}
+
+.main-navigation ul li a {
+  color: var(--text-color);
+  transition: color 0.2s ease;
+  text-decoration: none; /* Kein Unterstrich */
+}
+
+.main-navigation ul li:hover a {
+  color: var(--hover-color) !important;
+  padding: 5px 10px !important;
+  border-radius: 5px !important;
+  text-decoration: underline; /* Unterstrich beim Überfahren mit der Maus hinzufügen */
+}
+
+.main-navigation ul li a:hover {
+  color: var(
+    --hover-color
+  ); /* Farbe der Links im Navigationsmenü beim Überfahren mit der Maus */
+  padding: 5px 10px; /* Ein wenig Polsterung hinzufügen, um den Link optisch von anderen zu trennen */
+}
+
+/* Footer-Stile */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  color: #010625; /* Textfarbe im Footer */
+}
+
+#footer-content {
+  margin: 0 auto; /* Copyright-Datum horizontal zentrieren */
+  max-width: 60em; /* Breite des Copyright-Datums auf die Container-Breite beschränken */
+}
+
+/* Pfeil nach oben im Footer */
+.scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--container-background-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 24px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px var(--box-shadow-color);
+}
+
+.scroll-to-top:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+  background-color: var(--text-color);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+}
+
+/* Verbesserte Linkliste-Stile */
+.link-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid #ddd; /* Obere Trennlinie hinzufügen */
+}
+
+.link-list li {
+  display: flex; /* Flexbox verwenden, um Inhalt horizontal auszurichten */
+  align-items: center; /* Vertikal zentrieren */
+  margin-bottom: 10px;
+  padding: 10px 0; /* Innenabstand für bessere Lesbarkeit */
+  border-bottom: 1px solid #ddd; /* Untere Trennlinie zwischen den Links hinzufügen */
+}
+
+.link-list li:last-child {
+  border-bottom: none; /* Keine Trennlinie unter dem letzten Link */
+}
+
+.link-list a {
+  text-decoration: none; /* Kein Unterstrich */
+  color: var(--text-color);
+  font-weight: bold;
+  flex-grow: 1;
+  transition: color 0.2s;
+}
+
+.link-list a:hover {
+  color: var(--hover-color);
+  text-decoration: underline; /* Unterstrich beim Überfahren mit der Maus hinzufügen */
+}
+
+.link-icon {
+  margin-right: 10px; /* Abstand zwischen Icon und Text */
+}
+
+/* JavaScript-Stile (MathJax und Highlight.js) */
+#MathJax-script,
+script[type="text/javascript"] {
+  display: none;
+}
+
+/* Highlight.js */
+.hljs-keyword {
+  font-weight: bold;
+  color: rgb(46, 79, 79); /* DarkSlateGray */
+}
+
+.hljs-comment {
+  color: rgb(84, 84, 84); /* gray33 */
+}
+
+.hljs-string {
+  color: rgb(255, 140, 0); /* DarkOrange */
+}
+
+
+/* Grundlegende Tabellenstile */
+table {
+  width: 100%; /* Stellt sicher, dass die Tabelle die volle Breite des Containers nutzt */
+  border-collapse: collapse; /* Entfernt doppelte Ränder zwischen Zellen */
+  margin: 20px 0; /* Fügt oben und unten einen Außenabstand hinzu */
+}
+
+/* Stil für die Spaltengruppen */
+colgroup col {
+  background-color: #f4f4f4; /* Leichter Hintergrund für die Spalten */
+}
+
+/* Kopfzeilen der Tabelle */
+thead {
+  background-color: #010625; /* Dunkler Hintergrund für Kopfzeilen */
+  color: #a30404; /* Rote Schriftfarbe */
+}
+
+th, td {
+  padding: 10px; /* Innenabstand in Zellen */
+  text-align: left; /* Text linksbündig ausrichten */
+  border-bottom: 1px solid #ddd; /* Trennlinie zwischen den Zeilen */
+}
+
+/* Zeilen-Styles */
+tr.header {
+  font-weight: bold; /* Macht den Kopfzeilentext fett */
+}
+
+tr.odd {
+  background-color: #f9f9f9; /* Hintergrund für ungerade Zeilen */
+}
+
+tr.even {
+  background-color: #fefefe; /* Hintergrund für gerade Zeilen */
+}
+
+/* Anpassung für Code-Elemente innerhalb der Tabelle */
+code {
+  background-color: #eaeaea; /* Hintergrund für Code-Elemente */
+  padding: 2px 4px; /* Innenabstand für Code-Elemente */
+  border-radius: 4px; /* Abgerundete Ecken für Code-Elemente */
+  font-family: monospace; /* Schriftart für Code */
+}
+
+
+/* Link-Stile */
+a {
+  color: var(--link-color); /* Setzt die Linkfarbe auf das definierte Blau */
+  text-decoration: none; /* Entfernt den Unterstrich */
+  transition: color 0.3s; /* Sanfter Übergang für Farbänderungen */
+}
+
+a:visited {
+  color: var(--visited-link-color); /* Setzt die Farbe besuchter Links auf das definierte Rot */
+}
+
+a:hover, a:focus {
+  color: var(--hover-color); /* Ändert die Farbe beim Überfahren oder Fokussieren auf das Hover-Rot */
+  text-decoration: underline; /* Fügt Unterstrich beim Überfahren hinzu */
+}
+
+
+/* Anpassung der Bildgröße */
+figure embed {
+  max-width: 100%; /* Begrenzt die Breite des Bildes auf die Breite seines Containers */
+  height: auto; /* Passt die Höhe automatisch an, um das Seitenverhältnis beizubehalten */
+}
+
+/* Optional: Styling für Bildunterschriften */
+figcaption {
+  text-align: center; /* Zentriert die Bildunterschrift unter dem Bild */
+  margin-top: 0.5em; /* Fügt einen oberen Abstand zwischen Bild und Bildunterschrift hinzu */
+  color: var(--text-color); /* Verwendet die definierte Textfarbe für Bildunterschriften */
+  font-style: italic; /* Optional: Stilisiert die Bildunterschrift kursiv */
+}
+
+
+/* Anpassung der Größe für normale Bilder */
+figure img {
+  width: 80%; /* Setzt die Breite des Bildes auf 80% des umgebenden Containers */
+  height: auto; /* Passt die Höhe automatisch an, um das Seitenverhältnis beizubehalten */
+  display: block; /* Ermöglicht Zentrierung durch automatische margin */
+  margin: 0 auto; /* Zentriert das Bild horizontal */
+}
+
+/* Anpassung der Größe und Zentrierung für SVG */
+figure embed[src$=".svg"] {
+  width: 30%; /* Setzt die Breite des SVG auf 30% des umgebenden Containers */
+  height: auto; /* Passt die Höhe automatisch an, um das Seitenverhältnis beizubehalten */
+  display: block; /* Ermöglicht Zentrierung durch automatische margin */
+  margin: 0 auto; /* Zentriert das SVG horizontal */
+}
+
+
+/* Responsives Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.5em;
+  }
+
+  .main-navigation ul {
+    flex-wrap: wrap;
+  }
+
+  .main-navigation ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  ul li a {
+    font-size: 0.8em;
+  }
+}

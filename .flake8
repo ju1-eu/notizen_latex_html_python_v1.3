@@ -1,0 +1,40 @@
+[flake8]
+# Maximale Zeilenlänge
+max-line-length = 100
+
+# Dateien und Verzeichnisse, die ignoriert werden sollen
+exclude =
+    venv,
+    .git,
+    __pycache__,
+    build,
+    dist,
+    *.egg-info,
+    .eggs,
+    .tox,
+    .mypy_cache
+
+# Ignoriere bestimmte Fehler
+ignore =
+    # E203: Whitespace before ':' (wird von black anders formatiert)
+    E203,
+    # W503: Line break before binary operator (wird von black anders formatiert)
+    W503,
+    # E226: Missing whitespace around arithmetic operator
+    E226
+
+# Maximale Komplexität (McCabe complexity)
+max-complexity = 10
+
+# Stilüberprüfungen
+# Dokumentations-Überprüfungen aktivieren
+docstring-convention = google
+
+# Statistik anzeigen
+statistics = True
+
+# Dateinamen-Muster
+filename = *.py
+
+# Fehler im Format: {Dateipfad}:{Zeile}:{Spalte}: {Fehler-Code} {Nachricht}
+format = %(path)s:%(row)d:%(col)d: %(code)s %(text)s

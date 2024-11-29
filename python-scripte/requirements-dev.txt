@@ -1,0 +1,15 @@
+# requirements-dev.txt
+# Entwicklungswerkzeuge
+-r requirements.txt  # Importiert alle Produktionsabhängigkeiten
+black==24.10.0
+flake8==7.1.1
+isort==5.13.2
+mypy==1.13.0
+mypy-extensions==1.0.0
+pipdeptree==2.24.0
+pycodestyle==2.12.1
+pyflakes==3.2.0
+types-PyYAML==6.0.12.20240917
+types-requests==2.32.0.20241016
+types-tqdm==4.67.0.20241119
+typing_extensions==4.12.2

@@ -1,0 +1,9 @@
+QUELL_ORDNER: 'md'
+ZIEL_ORDNER: 'html'
+ERWEITERUNG: '.md'
+CSL_DATEI: 'content/zitierstil-number.csl'
+CSS_DATEI: 'navigation.css'
+bib_dateien:
+  - 'content/literatur-kfz.bib'
+  - 'content/literatur-sport.bib'
+  - 'literatur.bib'

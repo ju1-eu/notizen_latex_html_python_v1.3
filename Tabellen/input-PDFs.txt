@@ -1,0 +1,4 @@
+% ju 25-Feb-2022 input-PDFs.txt
+
+\section{ABC-Vorlage}\label{sec:ABC-Vorlage}\index{ABC-Vorlage}
+\includepdf[pages=-]{Tabellen/PDF/ABC-Vorlage.pdf}
