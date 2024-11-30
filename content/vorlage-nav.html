@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="./navigation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!--
-        github-dark-dimmed.min.css
-        github-dark.min.css
-        github.min.css
-        default.min.css
-    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 </head>
@@ -38,7 +32,9 @@
     </footer>
 </div>
 <!--javascript-->
-<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
-<script>hljs.highlightAll();</script>
+<script>
+    var MathJax = {tex: {inlineMath: [["$$", "$$"], ["\\\\(", "\\\\)"]]}};
+    hljs.highlightAll();
+</script>
 </body>
 </html>
