@@ -11,6 +11,7 @@ Toolset zur automatisierten Dokumentenverarbeitung mit LaTeX, HTML und Python.
 ```plaintext
 # Projektstruktur anzeigen
 tree -L 2 --dirsfirst
+git ls-files
 # Projektstruktur erfolgt nach Python-Projektstandards
 # Ausgabe kommentieren
 ├── Mindmap/          # Mindmap-Vorlagen und -Dateien

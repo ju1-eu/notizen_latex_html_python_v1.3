@@ -2,13 +2,13 @@
 !images/Logo/*.pdf
 !images/Logo/*.svg
 !images/Logo/*.eps
-!images/*.pdf
-!images/*.tex
+!images/**/*.pdf
+!images/**/*.tex
 
 # Projekt-Spezifisch
 NAVIGATION.html
 update_log.txt
-*.pdf
+/*.pdf
 html/*.html
 tex/*.tex
 images/output/
@@ -22,6 +22,7 @@ images/output/
 *~
 *.un~
 *.swo
+Thumbs.db
 
 # Ignoriere Coverage-Dateien
 .coverage
@@ -38,16 +39,18 @@ venv/
 *.egg-info/
 dist/
 build/
+.ipynb_checkpoints/
 
 # LaTeX
 *.aux
 *.bbl
 *.blg
+*.fdb_latexmk
+*.fls
 *.log
 *.out
 *.synctex.gz
 *.toc
 
-# Git
-.git/
+# Backup-Dateien
 requirements*.backup_*.txt
