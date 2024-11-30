@@ -52,4 +52,13 @@ repos:
     hooks:
       - id: latexindent
         args: ['-l']
-        files: \.tex$
+        files: '.*\.tex$'
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest --cov --cov-report=term-missing
+        language: system
+        types: [python]
+        verbose: true

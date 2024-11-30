@@ -86,8 +86,12 @@ pre-commit --version             # Version prüfen
 # Installation/Update der Hooks
 pre-commit clean                 # Cache leeren
 pre-commit install              # Hooks installieren
+pre-commit install --install-hooks
 pre-commit autoupdate           # Hooks aktualisieren
 pre-commit run --all-files      # Alle Hooks testen
+
+pip freeze > requirements.txt
+pytest -v
 ```
 
 Konfigurationsdateien:

@@ -1,0 +1,48 @@
+# requirements-dev.in
+# Entwicklungsabhängigkeiten
+
+## Basis-Abhängigkeiten
+-r requirements.in
+
+## Code-Formatierung & Linting
+black
+flake8
+isort
+pycodestyle
+pyflakes
+mccabe
+
+## Typ-Prüfung
+mypy
+mypy-extensions
+typing_extensions
+types-Pillow
+types-PyYAML
+types-requests
+types-tqdm
+
+## Testen
+pytest
+pytest-cov
+coverage
+iniconfig
+pluggy
+
+## Tools
+pipdeptree
+pre-commit
+identify
+nodeenv
+virtualenv
+platformdirs
+pathspec
+cfgv
+distlib
+filelock
+
+## Abhängigkeiten von Entwicklungswerkzeugen
+build
+pip-tools
+pyproject-hooks
+setuptools
+wheel

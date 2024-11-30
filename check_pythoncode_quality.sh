@@ -14,7 +14,7 @@
 # VORAUSSETZUNGEN
 #   - Python-Installation
 #   - Installierte Tools: black, isort, flake8, mypy
-#   - Python-Skripte im Verzeichnis ./python-scripte/
+#   - Python-Skripte im Projektverzeichnis
 #
 # VERWENDUNG
 #   chmod +x check_pythoncode_quality.sh
@@ -24,10 +24,10 @@
 #   Jan
 #
 # VERSION
-#   1.0
+#   1.2
 #
 # DATUM
-#   2024-11-26
+#   2024-11-30
 # ============================================================================
 
 # Farben und Formatierung
@@ -60,27 +60,18 @@ print_warning() {
     echo -e "${YELLOW}[WARNING] $1${NC}"
 }
 
-# Definiere Verzeichnis und Dateien
-SCRIPT_DIR="python-scripte"
-PYTHON_FILES=(
-    "$SCRIPT_DIR/dateien_inhaltsverzeichnis.py"
-    "$SCRIPT_DIR/dokumentation.py"
-    "$SCRIPT_DIR/git_hilfsprogramm.py"
-    "$SCRIPT_DIR/html1_konverter_pandoc.py"
-    "$SCRIPT_DIR/html2_dateien_verarbeiten.py"
-    "$SCRIPT_DIR/html3_navigation.py"
-    "$SCRIPT_DIR/html4_entfernen.py"
-    "$SCRIPT_DIR/latex_convert1.py"
-    "$SCRIPT_DIR/latexcode_entfernen2.py"
-    "$SCRIPT_DIR/suchen_ersetzen.py"
-    "$SCRIPT_DIR/sync_tex.py"
-    "$SCRIPT_DIR/extract_pdf_images.py"
-    "$SCRIPT_DIR/pdf_extractor.py"
-    "$SCRIPT_DIR/create_gallery.py"
-    "$SCRIPT_DIR/youtube_text_extraktor.py"
-    "$SCRIPT_DIR/image_resizer.py"
-    "$SCRIPT_DIR/scriptauswahl.py"
-)
+# Dynamische Ermittlung der Python-Dateien
+find_python_files() {
+    local exclude_dirs=("venv" "__pycache__" ".git" "build" "dist" "*.egg-info" ".eggs" ".tox" ".mypy_cache")
+    local find_args=(-type f -name '*.py')
+
+    for dir in "${exclude_dirs[@]}"; do
+        find_args+=(-not -path "./$dir/*" -not -path "./$dir")
+    done
+
+    # shellcheck disable=SC2207
+    PYTHON_FILES=($(find . "${find_args[@]}"))
+}
 
 # Prüfe Voraussetzungen
 check_requirements() {
@@ -97,7 +88,7 @@ check_requirements() {
         exit 1
     fi
 
-    # Prüfe venv Verzeichnis und Status
+    # Prüfe virtuelle Umgebung
     if [ ! -d "venv" ]; then
         print_error "Virtuelle Umgebung (venv/) nicht gefunden!"
         print_status "Möchten Sie eine neue virtuelle Umgebung erstellen? (j/n)"
@@ -175,8 +166,6 @@ check_requirements() {
     print_status "pip Version: $pip_version"
 
     # Prüfe Code-Qualitäts-Tools
-
-    # Prüfe Code-Qualitäts-Tools
     for tool in "${tools[@]}"; do
         if ! command -v "$tool" &> /dev/null; then
             missing_tools+=("$tool")
@@ -191,38 +180,26 @@ check_requirements() {
         print_status "Installation mit: pip install ${missing_tools[*]}"
         exit 1
     fi
-
-    # Prüfe Verzeichnis
-    if [ ! -d "$SCRIPT_DIR" ]; then
-        print_error "Verzeichnis $SCRIPT_DIR nicht gefunden!"
-        exit 1
-    fi
-
-    # Prüfe ob Dateien existieren
-    local missing_files=false
-    for file in "${PYTHON_FILES[@]}"; do
-        if [ ! -f "$file" ]; then
-            print_warning "Datei nicht gefunden: $file"
-            missing_files=true
-        fi
-    done
-
-    if [ "$missing_files" = true ]; then
-        print_warning "Einige Dateien wurden nicht gefunden. Fortfahren mit vorhandenen Dateien."
-    fi
 }
 
 # Führe Tool aus und prüfe Ergebnis
 run_tool() {
     local tool=$1
-    local files=("${@:2}")
+    shift
+    local files=("$@")
 
     print_header "Führe $tool aus"
+
+    if [ "${#files[@]}" -eq 0 ]; then
+        print_warning "Keine Dateien zum Prüfen gefunden."
+        return 0
+    fi
+
     if "$tool" "${files[@]}"; then
         print_success "$tool erfolgreich ausgeführt"
         return 0
     else
-        print_warning "$tool hat Probleme gefunden"
+        print_error "$tool hat Fehler gefunden"
         return 1
     fi
 }
@@ -232,6 +209,14 @@ main() {
     print_header "Python Code-Qualitätsprüfung"
     check_requirements
 
+    find_python_files
+
+    # Debug-Ausgabe
+    print_status "Gefundene Python-Dateien:"
+    for file in "${PYTHON_FILES[@]}"; do
+        echo "  $file"
+    done
+
     local has_errors=0
 
     # Führe Tools aus
@@ -240,11 +225,14 @@ main() {
     run_tool "flake8" "${PYTHON_FILES[@]}" || has_errors=1
     run_tool "mypy" "${PYTHON_FILES[@]}" || has_errors=1
 
+    # Zusammenfassung mit Exit-Code
     print_header "Zusammenfassung"
     if [ $has_errors -eq 0 ]; then
         print_success "Alle Qualitätsprüfungen erfolgreich abgeschlossen"
+        exit 0
     else
-        print_warning "Einige Qualitätsprüfungen haben Probleme gefunden"
+        print_error "Einige Qualitätsprüfungen haben Fehler gefunden"
+        exit 1
     fi
 }
 

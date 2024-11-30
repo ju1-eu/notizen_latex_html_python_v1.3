@@ -1,0 +1,31 @@
+# requirements.in
+# Produktionsabhängigkeiten
+
+## PDF-Verarbeitung
+PyMuPDF
+PyPDF2
+
+## Medienverarbeitung
+Pillow
+pytube
+whisper
+youtube-transcript-api
+
+## Dokumentenverarbeitung
+markdown-it-py
+defusedxml
+Jinja2
+MarkupSafe
+
+## CLI & Formatierung
+click
+rich
+tqdm
+
+## Konfiguration & Utils
+PyYAML
+python-dotenv
+packaging
+
+## Netzwerk & Encoding
+requests

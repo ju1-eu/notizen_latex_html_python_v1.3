@@ -5,12 +5,12 @@
 #
 # BESCHREIBUNG
 #   Automatisiertes Update-Tool für Python-Pakete in einer virtuellen Umgebung.
-#   Das Skript behandelt sowohl Produktions- als auch Entwicklungsabhängigkeiten.
+#   Das Skript verwendet pip-tools zur Verwaltung der Abhängigkeiten.
 #
 # VORAUSSETZUNGEN
 #   - Aktive Python-Installation
 #   - Virtuelle Umgebung unter ./venv/
-#   - Existierende requirements.txt und requirements-dev.txt
+#   - Existierende requirements.in und requirements-dev.in
 #   - Bash oder kompatible Shell (z.B. zsh)
 #
 # VERWENDUNG
@@ -18,20 +18,18 @@
 #   ./update_python_packages.sh
 #
 # AUSGABEDATEIEN
-#   - requirements.backup.txt - Backup der Produktionsabhängigkeiten
-#   - requirements-dev.backup.txt - Backup der Entwicklungsabhängigkeiten
-#   - requirements.txt - Aktualisierte Produktionsabhängigkeiten
-#   - requirements-dev.txt - Aktualisierte Entwicklungsabhängigkeiten
+#   - requirements.txt - Aktualisierte Produktionsabhängigkeiten mit festen Versionen
+#   - requirements-dev.txt - Aktualisierte Entwicklungsabhängigkeiten mit festen Versionen
 #   - update_log.txt - Detailliertes Update-Log
 #
 # VERSION
-#   2.0
+#   3.0
 #
 # DATUM
-#   2024-11-26
+#   2024-11-30
 # ============================================================================
 
-# Farben und Formatierung bleiben gleich...
+# Farben und Formatierung
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 RED='\033[0;31m'
@@ -39,7 +37,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 BOLD='\033[1m'
 
-# Logging-Funktionen bleiben gleich...
+# Logging-Funktionen
 log_file="update_log.txt"
 
 setup_logging() {
@@ -82,7 +80,7 @@ print_header() {
     log "=== $1 ==="
 }
 
-# Cleanup-Funktion bleibt gleich...
+# Cleanup-Funktion
 cleanup() {
     if [ -n "$VIRTUAL_ENV" ]; then
         print_status "Führe Cleanup durch..."
@@ -92,64 +90,6 @@ cleanup() {
 }
 
 trap cleanup EXIT
-
-# Neue Funktion zum Aktualisieren der Paketlisten
-update_requirements() {
-    local req_type=$1
-    local file_name="requirements${req_type}.txt"
-    local backup_file="requirements${req_type}.backup_${timestamp}.txt"
-
-    print_header "Bearbeite ${file_name}"
-
-    if [ ! -f "$file_name" ]; then
-        print_warning "${file_name} nicht gefunden, überspringe..."
-        return
-    fi
-
-    # Backup erstellen
-    cp "$file_name" "$backup_file"
-    print_success "Backup erstellt: $backup_file"
-
-    # Pakete aus der jeweiligen requirements-Datei aktualisieren
-    while IFS= read -r line; do
-        # Überspringe Kommentare und leere Zeilen
-        if [[ $line =~ ^#.*$ ]] || [ -z "$line" ] || [[ $line =~ ^-r.* ]]; then
-            continue
-        fi
-
-        # Extrahiere Paketnamen (ohne Version)
-        package=$(echo "$line" | cut -d'=' -f1)
-        print_status "Aktualisiere: $package"
-
-        if pip install -U "$package"; then
-            print_success "$package erfolgreich aktualisiert"
-        else
-            print_warning "Problem beim Update von $package"
-        fi
-    done < "$file_name"
-
-    # Neue requirements-Datei erstellen
-    if [ "$req_type" = "" ]; then
-        # Für requirements.txt: Nur Produktionsabhängigkeiten
-        pip freeze > temp_requirements.txt
-        # Entferne Entwicklungspakete
-        grep -v -f requirements-dev.txt temp_requirements.txt > "$file_name" || true
-        rm temp_requirements.txt
-    else
-        # Für requirements-dev.txt: Entwicklungsabhängigkeiten
-        pip freeze > "$file_name"
-    fi
-
-    print_success "Neue ${file_name} erstellt"
-
-    # Änderungsübersicht
-    print_header "Änderungsübersicht für ${file_name}"
-    if ! diff "$backup_file" "$file_name"; then
-        print_status "Siehe oben für die Änderungen"
-    else
-        print_status "Keine Änderungen in den Paketversionen"
-    fi
-}
 
 # Hauptskript
 main() {
@@ -169,21 +109,12 @@ main() {
         exit 1
     fi
 
-    # Prüfe requirements Dateien
-    if [ ! -f "requirements.txt" ] && [ ! -f "requirements-dev.txt" ]; then
-        print_error "Keine requirements.txt oder requirements-dev.txt gefunden!"
-        exit 1
-    fi
-
     # Aktiviere virtuelle Umgebung
     print_status "Aktiviere virtuelle Umgebung..."
     source venv/bin/activate || {
         print_error "Fehler beim Aktivieren der virtuellen Umgebung!"
         exit 1
     }
-
-    # Timestamp für Backups
-    timestamp=$(date '+%Y%m%d_%H%M%S')
 
     # Pip Update
     print_header "Aktualisiere pip"
@@ -192,11 +123,57 @@ main() {
         exit 1
     }
 
-    # Update Produktionsabhängigkeiten
-    update_requirements ""
+    # Installiere oder aktualisiere pip-tools
+    print_header "Installiere/aktualisiere pip-tools"
+    pip install --upgrade pip-tools || {
+        print_error "Installation von pip-tools fehlgeschlagen!"
+        exit 1
+    }
 
-    # Update Entwicklungsabhängigkeiten
-    update_requirements "-dev"
+    # Kompiliere requirements.txt
+    if [ -f "requirements.in" ]; then
+        print_header "Kompiliere requirements.txt"
+        if pip-compile requirements.in --strip-extras; then
+            print_success "requirements.txt erfolgreich erstellt."
+        else
+            print_error "Fehler beim Kompilieren von requirements.txt"
+            exit 1
+        fi
+    else
+        print_error "requirements.in nicht gefunden!"
+        exit 1
+    fi
+
+    # Kompiliere requirements-dev.txt
+    if [ -f "requirements-dev.in" ]; then
+        print_header "Kompiliere requirements-dev.txt"
+        if pip-compile requirements-dev.in --strip-extras; then
+            print_success "requirements-dev.txt erfolgreich erstellt."
+        else
+            print_error "Fehler beim Kompilieren von requirements-dev.txt"
+            exit 1
+        fi
+    else
+        print_error "requirements-dev.in nicht gefunden!"
+        exit 1
+    fi
+
+    # Installiere Abhängigkeiten
+    print_header "Installiere Produktionsabhängigkeiten"
+    if pip install -r requirements.txt; then
+        print_success "Produktionsabhängigkeiten installiert."
+    else
+        print_error "Fehler beim Installieren der Produktionsabhängigkeiten!"
+        exit 1
+    fi
+
+    print_header "Installiere Entwicklungsabhängigkeiten"
+    if pip install -r requirements-dev.txt; then
+        print_success "Entwicklungsabhängigkeiten installiert."
+    else
+        print_error "Fehler beim Installieren der Entwicklungsabhängigkeiten!"
+        exit 1
+    fi
 
     print_success "Update-Prozess erfolgreich abgeschlossen!"
 }
