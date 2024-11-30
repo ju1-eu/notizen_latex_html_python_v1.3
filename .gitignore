@@ -43,3 +43,4 @@ build/
 
 # Git
 .git/
+requirements*.backup_*.txt

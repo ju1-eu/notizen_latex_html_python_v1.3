@@ -10,10 +10,7 @@ format = %(path)s:%(row)d:%(col)d: %(code)s %(text)s
 filename = *.py
 
 # Ignorierte Fehler
-ignore =
-    E203,   # Whitespace vor ':'
-    W503,   # Zeilenumbruch vor Operator
-    E226    # Leerzeichen um arithmetische Operatoren
+ignore = E203, W503, E226
 
 # Ausgeschlossene Pfade
 exclude =

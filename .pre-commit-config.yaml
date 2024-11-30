@@ -1,15 +1,14 @@
-# Pre-commit Hooks Konfiguration
 repos:
   # Standard Checks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
-      - id: trailing-whitespace # Leerzeichen am Zeilenende
-      - id: end-of-file-fixer # Zeilenende am Dateiende
-      - id: check-yaml # YAML-Syntax
-      - id: check-added-large-files # Dateigröße max 800KB
-      - id: check-merge-conflict # Merge-Konflikte
-      - id: mixed-line-ending # Unix-Zeilenenden (LF)
+      - id: trailing-whitespace # Entfernt Leerzeichen am Zeilenende
+      - id: end-of-file-fixer # Stellt sicher, dass Dateien mit einer neuen Zeile enden
+      - id: check-yaml # Validiert die YAML-Syntax
+      - id: check-added-large-files # Verhindert große Dateien (> 800 KB)
+      - id: check-merge-conflict # Warnt vor verbleibenden Merge-Konflikten
+      - id: mixed-line-ending # Konvertiert zu Unix-Zeilenenden (LF)
 
   # Python Code-Formatierung
   - repo: https://github.com/psf/black
@@ -17,12 +16,14 @@ repos:
     hooks:
       - id: black
         language_version: python3.13
+        files: \.py$ # Nur Python-Dateien prüfen
 
   # Import-Sortierung
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
+        files: \.py$ # Nur Python-Dateien prüfen
 
   # Code-Style & Dokumentation
   - repo: https://github.com/pycqa/flake8
@@ -31,4 +32,24 @@ repos:
       - id: flake8
         additional_dependencies:
           - flake8-docstrings # Docstring-Check
-        args: [--max-line-length=100]
+        args: [--max-line-length=100, --ignore=D203]
+        files: \.py$ # Nur Python-Dateien prüfen
+
+  # Typprüfung
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - types-PyYAML
+          - types-requests
+          - types-Pillow
+        files: \.py$
+
+  # LaTeX Syntaxprüfung (optional)
+  - repo: https://github.com/cmhughes/latexindent.pl
+    rev: V3.24.4
+    hooks:
+      - id: latexindent
+        args: ['-l']
+        files: \.tex$

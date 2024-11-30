@@ -111,14 +111,14 @@ class PDFImageExtractor:
 
     def _get_filename(self, counter: int) -> Path:
         """Generiert einen formatierten Dateinamen"""
-        return (
-            self.output_dir
-            / f"{counter:04d}_{self.image_prefix}_{self.project_name}.{self.image_format}"
+        return self.output_dir / (
+            f"{counter:04d}_{self.image_prefix}_{self.project_name}.{self.image_format}"
         )
 
     def _is_valid_image(self, image: Image.Image) -> bool:
         """Prüft ob ein Bild den Qualitätskriterien entspricht"""
-        width, height = image.size
+        size: Tuple[int, int] = image.size
+        width, height = size
         return width >= self.config.min_width and height >= self.config.min_height
 
     def _optimize_image(self, image: Image.Image) -> Image.Image:
