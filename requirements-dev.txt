@@ -20,7 +20,7 @@ charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   black
     #   pip-tools
 coverage==7.6.8
@@ -29,7 +29,7 @@ coverage==7.6.8
     #   pytest-cov
 defusedxml==0.7.1
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   youtube-transcript-api
 distlib==0.3.9
     # via
@@ -54,14 +54,14 @@ iniconfig==2.0.0
 isort==5.13.2
     # via -r requirements-dev.in
 jinja2==3.1.4
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 markdown-it-py==3.0.0
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   rich
 markupsafe==3.0.2
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   jinja2
 mccabe==0.7.0
     # via
@@ -82,7 +82,7 @@ nodeenv==1.9.1
     #   pre-commit
 packaging==24.2
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   black
     #   build
     #   pipdeptree
@@ -92,7 +92,7 @@ pathspec==0.12.1
     #   -r requirements-dev.in
     #   black
 pillow==11.0.0
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 pip-tools==7.4.1
     # via -r requirements-dev.in
 pipdeptree==2.24.0
@@ -119,9 +119,9 @@ pyflakes==3.2.0
 pygments==2.18.0
     # via rich
 pymupdf==1.24.14
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 pypdf2==3.0.1
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 pyproject-hooks==1.2.0
     # via
     #   -r requirements-dev.in
@@ -134,23 +134,23 @@ pytest==8.3.3
 pytest-cov==6.0.0
     # via -r requirements-dev.in
 python-dotenv==1.0.1
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 pytube==15.0.0
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 pyyaml==6.0.2
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   pre-commit
 requests==2.32.3
     # via
-    #   -r /Users/jan/Downloads/notizen/requirements.in
+    #   -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
     #   youtube-transcript-api
 rich==13.9.4
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 six==1.16.0
     # via whisper
 tqdm==4.67.1
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 types-pillow==10.2.0.20240822
     # via -r requirements-dev.in
 types-pyyaml==6.0.12.20240917
@@ -178,9 +178,9 @@ wheel==0.45.1
     #   -r requirements-dev.in
     #   pip-tools
 whisper==1.1.10
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 youtube-transcript-api==0.6.3
-    # via -r /Users/jan/Downloads/notizen/requirements.in
+    # via -r /Users/jan/daten/latex/notizen_latex_html_python_v1.3/requirements.in
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

@@ -59,8 +59,10 @@ git config --global credential.helper cache
 gh auth login
 
 # Repository Setup
-git remote add origin https://github.com/ju1-eu/notizen_latex_html_python_v1.git
-git remote add local /Users/jan/notizen_latex_html_python_v1.git
+git remote add origin git@github.com:ju1-eu/notizen_latex_html_python_v1.3.git
+git branch -M main
+git push -u origin main
+git remote add local /Users/jan/notizen_latex_html_python_v1.3.git
 
 # Workflow
 git status              # Status prüfen

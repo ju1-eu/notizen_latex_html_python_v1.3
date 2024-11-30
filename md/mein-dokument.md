@@ -43,15 +43,16 @@ git remote -v
 
 # Lokales Backup-Repository einrichten
 git init --bare
-git remote add local /Users/jan/notizen_latex_html_python_v1.git
+git remote add local /Users/jan/notizen_latex_html_python_v1.3.git
 git remote rename localBackup local
 git push local main
 git pull local main
 
 # GitHub-Repository einrichten
 git init
-git remote set-url origin https://github.com/ju1-eu/notizen_latex_html_python_v1.git
-git push -u origin main  # Erste Synchronisation mit GitHub
+git remote add origin git@github.com:ju1-eu/notizen_latex_html_python_v1.3.git
+git branch -M main
+git push -u origin main
 git pull origin main
 
 # Standardbefehle für Synchronisation
@@ -61,8 +62,8 @@ git st    # Status anzeigen
 git ls    # Dateien auflisten
 
 # Repository klonen
-git clone https://github.com/ju1-eu/notizen_latex_html_python_v1.git
-git clone /Users/jan/notizen_latex_html_python_v1.git notizen_klon
+git clone https://github.com/ju1-eu/notizen_latex_html_python_v1.3.git
+git clone /Users/jan/notizen_latex_html_python_v1.3.git notizen_klon
 ```
 
 ## Latex
@@ -236,8 +237,8 @@ git config --global credential.helper cache
 gh auth login
 
 # Repository Setup
-git remote add origin https://github.com/ju1-eu/notizen_latex_html_python_v1.git
-git remote add local /Users/jan/notizen_latex_html_python_v1.git
+git remote add origin https://github.com/ju1-eu/notizen_latex_html_python_v1.3.git
+git remote add local /Users/jan/notizen_latex_html_python_v1.3.git
 
 # Workflow
 git status              # Status prüfen
