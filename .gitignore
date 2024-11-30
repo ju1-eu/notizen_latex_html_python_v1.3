@@ -19,6 +19,13 @@ images/output/
 .vscode/
 *.swp
 *.bak
+*~
+*.un~
+*.swo
+
+# Ignoriere Coverage-Dateien
+.coverage
+htmlcov/
 
 # Python
 __pycache__/
