@@ -64,6 +64,7 @@ class PandocConfig:
     erweiterung: str = ".md"
     csl_datei: Path = field(default_factory=lambda: Path("ieee.csl"))
     css_datei: Path = field(default_factory=lambda: Path("style.css"))
+    vorlage: Path = field(default_factory=lambda: Path("vorlage-main.html"))  # NEU
     bib_dateien: List[Path] = field(default_factory=list)
 
     @classmethod
@@ -90,6 +91,7 @@ class PandocConfig:
                 erweiterung=config_data["ERWEITERUNG"],
                 csl_datei=Path(config_data["CSL_DATEI"]),
                 css_datei=Path(config_data["CSS_DATEI"]),
+                vorlage=Path(config_data["VORLAGE"]),  # VORLAGE fehlte
                 bib_dateien=[Path(bib) for bib in config_data["bib_dateien"]],
             )
         except FileNotFoundError:
@@ -152,12 +154,14 @@ class PandocConverter:
             str(quelle),
             "-o",
             str(ziel),
+            "--template",
+            str(self.config.vorlage),
             "-c",
-            str(self.config.css_datei),
-            "--mathjax",
-            "--citeproc",
+            str(self.config.css_datei),  # CSS hinzufügen
             "--csl",
             str(self.config.csl_datei),
+            "--mathjax",
+            "--citeproc",
         ]
 
         for bib in self.config.bib_dateien:

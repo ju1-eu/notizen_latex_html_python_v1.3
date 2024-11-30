@@ -3,6 +3,7 @@ ZIEL_ORDNER: 'html'
 ERWEITERUNG: '.md'
 CSL_DATEI: 'content/zitierstil-number.csl'
 CSS_DATEI: 'navigation.css'
+VORLAGE: 'content/vorlage-main.html' # NEU
 bib_dateien:
   - 'content/literatur-kfz.bib'
   - 'content/literatur-sport.bib'

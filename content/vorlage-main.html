@@ -3,40 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eine Webseite für die Navigation.">
-    <title>Notizen</title>
+    <meta name="description" content="$if(description)$$description$$else$Eine Webseite für die Navigation.$endif$">
+    <title>$if(title)$$title$$else$Notizen$endif$</title>
     <link rel="stylesheet" href="../navigation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap">
     <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <!--
-        github-dark-dimmed.min.css
-        github-dark.min.css
-        github.min.css
-        default.min.css
-    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
 </head>
 <body>
 <div class="container">
     <header role="banner" class="header-wrapper">
-        <h1>Notizen</h1>
+        <h1>$if(title)$$title$$else$Notizen$endif$</h1>
     </header>
     <nav class="main-navigation" role="navigation">
         <a href="../navigation.html" class="nav-link">Start</a>
     </nav>
     <main role="main">
-<!-- PLATZHALTER -->
+$body$
     </main>
     <footer role="contentinfo">
-        <div id="footer-content">
-            &copy; 2024
-        </div>
-        <a href="#" class="scroll-to-top">&#8593;</a><!--Pfeil-->
+        <div id="footer-content">&copy; 2024</div>
+        <a href="#" class="scroll-to-top">&#8593;</a>
     </footer>
 </div>
-<!--javascript-->
-<script>MathJax = {tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}};</script>
-<script>hljs.highlightAll();</script>
+<script>
+    var MathJax = {tex: {inlineMath: [["$$", "$$"], ["\\\\(", "\\\\)"]]}};
+    hljs.highlightAll();
+</script>
 </body>
 </html>

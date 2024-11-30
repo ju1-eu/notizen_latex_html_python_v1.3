@@ -88,12 +88,10 @@ HTML_COMMANDS = {
 
 
 def kombinierte_html_verarbeitung() -> None:
-    """Führt HTML-bezogene Befehle in einer Sequenz aus."""
     for befehl in [
-        HTML_COMMANDS["PANDOC"],
-        HTML_COMMANDS["VERARBEITEN"],
-        HTML_COMMANDS["NAVIGATION"],
-        HTML_COMMANDS["ENTFERNEN"],
+        HTML_COMMANDS["PANDOC"],  # MD -> HTML mit Template
+        HTML_COMMANDS["NAVIGATION"],  # Erstellt Navigation
+        HTML_COMMANDS["ENTFERNEN"],  # Bildpfade korrigieren
     ]:
         if isinstance(befehl, list):
             sicherer_aufruf(befehl)
@@ -223,14 +221,13 @@ BEFEHLE: Dict[str, BefehlsEintrag] = {
         "name": "Markdown in HTML Konvertierung mit Pandoc",
         "command": HTML_COMMANDS["PANDOC"],
     },
-    "12": {"name": "HTML Dateien verarbeiten", "command": HTML_COMMANDS["VERARBEITEN"]},
-    "13": {
+    "12": {
         "name": "Navigation über HTML Seiten erstellen",
         "command": HTML_COMMANDS["NAVIGATION"],
     },
-    "14": {"name": "HTML Code entfernen", "command": HTML_COMMANDS["ENTFERNEN"]},
-    "15": {
-        "name": "Kombi HTML (Schritte 11-14)",
+    "13": {"name": "HTML Code entfernen", "command": HTML_COMMANDS["ENTFERNEN"]},
+    "14": {
+        "name": "Kombi HTML (Schritte 11-13)",
         "command": kombinierte_html_verarbeitung,
     },
 }

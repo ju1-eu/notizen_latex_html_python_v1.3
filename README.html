@@ -34,20 +34,20 @@
 </ul>
 <pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code># Projektstruktur anzeigen
 tree -L 2 --dirsfirst
+git ls-files
 # Projektstruktur erfolgt nach Python-Projektstandards
 # Ausgabe kommentieren
-.
 ├── Mindmap/          # Mindmap-Vorlagen und -Dateien
-│   └── Mindmap-Vorlage.tex
+    └── Mindmap-Vorlage.tex
 ├── Tabellen/         # PDF-Tabellen und Inputlisten
-│   ├── PDF/
-│   └── input-PDFs.txt
+    ├── PDF/
+    └── input-PDFs.txt
 ├── content/          # Projektvorlagen &amp; -Ressourcen
-│   ├── Makefile
-│   ├── *.tex        # LaTeX-Vorlagen
-│   ├── *.html       # HTML-Vorlagen
-│   ├── *.bib        # Literaturverzeichnisse
-│   └── *.css        # Stylesheets
+    ├── Makefile
+    ├── *.tex        # LaTeX-Vorlagen
+    ├── *.html       # HTML-Vorlagen
+    ├── *.bib        # Literaturverzeichnisse
+    └── *.css        # Stylesheets
 ├── html/            # HTML-Ausgabedateien
 ├── images/          # Bilder und Mindmaps
 ├── md/              # Markdown-Quelldateien
@@ -106,8 +106,12 @@ pre-commit <span class="token parameter variable">--version</span>             <
 <span class="token comment"># Installation/Update der Hooks</span>
 pre-commit clean                 <span class="token comment"># Cache leeren</span>
 pre-commit <span class="token function">install</span>              <span class="token comment"># Hooks installieren</span>
+pre-commit <span class="token function">install</span> --install-hooks
 pre-commit autoupdate           <span class="token comment"># Hooks aktualisieren</span>
 pre-commit run --all-files      <span class="token comment"># Alle Hooks testen</span>
+
+pip freeze <span class="token operator">&gt;</span> requirements.txt
+pytest <span class="token parameter variable">-v</span>
 </code></pre><p>Konfigurationsdateien:</p>
 <pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>.pre-commit-config.yaml    # Pre-commit Hook-Konfiguration
 pyproject.toml            # Python Projekt &amp; Tool-Konfiguration
