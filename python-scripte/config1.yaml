@@ -7,4 +7,4 @@ VORLAGE: 'content/vorlage-main.html' # NEU
 bib_dateien:
   - 'content/literatur-kfz.bib'
   - 'content/literatur-sport.bib'
-  - 'literatur.bib'
+  - 'content/literatur.bib'
