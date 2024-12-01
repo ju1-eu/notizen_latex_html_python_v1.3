@@ -1,0 +1,277 @@
+/* Variablen */
+:root {
+  --text-color: #333; /* Dunklere, gut lesbare Farbe */
+  --hover-color: #a30404; /* Farbe beim Überfahren mit der Maus */
+  --link-color: #007bff; /* Schönes Blau für Links */
+  --visited-link-color: #d63447; /* Schönes Rot für besuchte Links */
+  --background-color: #f4f4f4;
+  --container-background-color: #fff;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --font-size-h1: 2em; /* Vergrößerte Schriftgröße für bessere Sichtbarkeit */
+  --font-size-link: 1em;
+}
+
+/* Allgemeine Stile */
+body {
+  font-family: 'Source Sans Pro', Arial, sans-serif; /* Leicht lesbare Schriftart */
+  background-color: var(--background-color);
+  color: var(--text-color); /* Dunklere Farbe für besseren Kontrast */
+  font-size: 16px; /* Standardgröße von 16px für bessere Lesbarkeit */
+  line-height: 1.5; /* Verbesserte Zeilenhöhe */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: var(--container-background-color);
+  box-shadow: 0 0 1em var(--box-shadow-color);
+  text-align: justify; /* Blocksatz für einen sauberen Rand */
+}
+
+/* Header-Stile */
+.header-wrapper {
+  background-color: #010625;
+  color: var(--container-background-color);
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: var(--font-size-h1);
+  text-decoration: none;
+  color: var(--container-background-color);
+  margin: 0;
+}
+
+/* Navigationsleiste */
+.main-navigation {
+  background-color: #010625;
+  padding: 0.5em 0;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-navigation ul li {
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.nav-link,
+.main-navigation ul li a {
+  display: inline-block;
+  padding: 8px 15px;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.main-navigation ul li a:hover {
+  color: var(--hover-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: underline;
+}
+
+/* Footer-Stile */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  color: #010625; /* Textfarbe im Footer */
+}
+
+#footer-content {
+  margin: 0 auto;
+  max-width: 60em;
+}
+
+/* Pfeil nach oben im Footer */
+.scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--container-background-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 24px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px var(--box-shadow-color);
+}
+
+.scroll-to-top:hover {
+  text-decoration: none;
+  color: var(--hover-color);
+  background-color: var(--text-color);
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+}
+
+/* Verbesserte Linkliste-Stile */
+.link-list {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid #ddd;
+}
+
+.link-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.link-list li:last-child {
+  border-bottom: none;
+}
+
+.link-list a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  flex-grow: 1;
+  transition: color 0.2s;
+}
+
+.link-list a:hover {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+.link-icon {
+  margin-right: 10px;
+}
+
+/* Highlight.js */
+.hljs-keyword {
+  font-weight: bold;
+  color: rgb(46, 79, 79); /* DarkSlateGray */
+}
+
+.hljs-comment {
+  color: rgb(84, 84, 84); /* gray33 */
+}
+
+.hljs-string {
+  color: rgb(255, 140, 0); /* DarkOrange */
+}
+
+/* Grundlegende Tabellenstile */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+thead tr {
+  background-color: #010625;
+  color: #a30404;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fefefe;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Anpassung für Code-Elemente innerhalb der Tabelle */
+code {
+  background-color: #eaeaea;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* Link-Stile */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:visited {
+  color: var(--visited-link-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* Anpassung der Bildgröße */
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional: Styling für Bildunterschriften */
+figcaption {
+  text-align: center;
+  margin-top: 0.5em;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+/* Anpassung der Größe und Zentrierung für SVG */
+figure img[src$=".svg"] {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsives Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.5em;
+  }
+
+  .main-navigation ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-navigation ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-link,
+  .main-navigation ul li a {
+    font-size: 0.9em;
+    padding: 5px 0;
+  }
+
+  .site-title {
+    font-size: 1.5em;
+  }
+}

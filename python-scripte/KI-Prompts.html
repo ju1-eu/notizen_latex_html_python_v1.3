@@ -1,0 +1,559 @@
+<!DOCTYPE html><html><head>
+      <title>KI-Prompts</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:////Users/jan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.15/crossnote/dependencies/katex/katex.min.css">
+
+
+      <script type="text/javascript" src="file:////Users/jan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.15/crossnote/dependencies/mermaid/mermaid.min.js" charset="UTF-8"></script>
+
+
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+
+
+      <div class="crossnote markdown-preview  ">
+      <div>
+<h1 id="methodik-zur-textanalyse-und-wissensverarbeitung"><strong>Methodik zur Textanalyse und Wissensverarbeitung</strong> </h1>
+<div class="mermaid">mindmap
+  root((Textanalyse &amp;
+  Wissensverarbeitung))
+    Digitale Werkzeuge
+      KI-Tools
+        Claude
+        Perplexity
+      Fachmagazin
+        Krafthand
+      PDF-Tools
+        iLovePDF
+      E-Learning
+        Valeo Tech Academy
+    Textbearbeitung
+      Krafthand Ausgaben
+        Ausgabe 22
+        Ausgabe 21
+        Ausgabe 20
+        Ausgabe 18-19
+        Ausgabe 17
+    Methodik
+      Exzerpieren
+        Thema definieren
+        Text lesen
+        Kernaussagen
+        Kommentare
+      Visualisierung
+        Mindmaps
+        Diagramme
+      Glossar
+        Fachbegriffe
+        Definitionen
+    Lernmethoden
+      Concept Mapping
+      Spaced Repetition
+      Peer Learning
+      Experimentelles Lernen
+</div><h2 id="digitale-werkzeuge"><strong>Digitale Werkzeuge</strong> </h2>
+<ul>
+<li><strong>KI-Tools</strong>: <a href="https://claude.ai/new">Claude</a>, <a href="https://www.perplexity.ai/">Perplexity</a></li>
+<li><strong>Fachmagazin</strong>: <a href="https://www.krafthand.de/">Krafthand</a> (inklusive <a href="https://www.krafthand.de/service/ausgaben/">Ausgaben</a>)</li>
+<li><strong>PDF-Tool</strong>: <a href="https://www.ilovepdf.com/de/entsperren_pdf">iLovePDF</a> (zum Bearbeiten von PDFs)</li>
+<li><strong>E-Learning</strong>: <a href="https://www.valeo-techacademy.com/de/learn">Valeo Tech Academy</a></li>
+</ul>
+<hr>
+<h2 id="todo-liste-textbearbeitung"><strong>ToDo-Liste: Textbearbeitung</strong> </h2>
+<h3 id="krafthand--todo-übersicht"><strong>Krafthand – ToDo-Übersicht</strong> </h3>
+<h4 id="ausgabe-22-abgeschlossen"><strong>Ausgabe 22</strong> (abgeschlossen) </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> HUK-E-Barometer zur E-Mobilität in Deutschland</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> Drive Pilot von Mercedes-Benz – Erweiterung auf 95 km/h</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> Spot-Repair in der Karosseriereparatur</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> VW Golf 7: Problemanalyse Tankklappe</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> Innovationen für HV-Batterien (Cell Caps und Cell Envelopes)</li>
+</ul>
+<h4 id="ausgabe-21-in-bearbeitung"><strong>Ausgabe 21</strong> (in Bearbeitung) </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> ADAC-Winterreifentest 2024: Sieger und Verlierer</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> HV-Plattform PPE von Audi: Neue E-Auto-Plattform</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Check von GTÜ, ACE und ARBÖ: Ganzjahresreifen im Test</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Fahrerassistenzsysteme: Kalibrierung bei niedrigen Temperaturen</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Experteninterview zum Automatikgetriebeölwechsel</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Wettbewerbswidrige OBD-Sperren: Security Gateways</li>
+</ul>
+<h4 id="ausgabe-20"><strong>Ausgabe 20</strong> </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked=""> LED-Nachrüstung von Halogenlampen</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Quietsch- und Knarzgeräusche bei vollem Lenkeinschlag</li>
+</ul>
+<h4 id="ausgabe-18-19"><strong>Ausgabe 18-19</strong> </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Batterietechnologie: Zellarten bei Cell-to-Pack</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Was bedeutet Cell-to-Pack?</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Umfrage bei 274 Kfz-Betrieben: Veränderungsbedarf in Werkstätten</li>
+</ul>
+<h4 id="ausgabe-17"><strong>Ausgabe 17</strong> </h4>
+<ul>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Statische Batterieprüfung: E-Autobatterie in 15 Minuten testen</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Hygienerichtlinien für Fahrzeugklimaanlagen: Unsichtbare Gefahr</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Garantieverweigerung bei Wartungsmängeln</li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox"> Servicebedarf und Mischbarkeit von RDKS-Sensoren</li>
+</ul>
+<hr>
+<h2 id="exzerpieren-textanalyse-und--zusammenfassung"><strong>Exzerpieren: Textanalyse und -zusammenfassung</strong> </h2>
+<h3 id="vorgehen"><strong>Vorgehen</strong> </h3>
+<ol>
+<li><strong>Thema definieren</strong>: Festlegen, welcher Text oder welche Fragestellung analysiert wird.</li>
+<li><strong>Text lesen</strong>: Überblickslektüre zur Identifikation zentraler Thesen und Argumente.</li>
+<li><strong>Kernaussagen formulieren</strong>: Prägnante Wiedergabe der Hauptaussagen.</li>
+<li><strong>Eigene Kommentare ergänzen</strong>: Kritische Reflexion und offene Fragen notieren.</li>
+</ol>
+<h3 id="beispiel"><strong>Beispiel</strong> </h3>
+<p><strong>Originaltext</strong>:<br>
+<em>"Die Umstellung auf E-Mobilität könnte bis 2030 den CO2-Ausstoß um 40 % reduzieren."</em></p>
+<p><strong>Exzerpt</strong>:<br>
+<em>"E-Mobilität: Potenzial zur CO2-Reduktion um 40 % bis 2030 (vgl. Müller 2024, S. 10)."</em></p>
+<p><strong>Eigene Anmerkung</strong>:<br>
+<em>"Die Angabe berücksichtigt nicht die Emissionen der Batterieproduktion."</em></p>
+<hr>
+<h2 id="visuelle-unterstützung-mindmaps"><strong>Visuelle Unterstützung: Mindmaps</strong> </h2>
+<ul>
+<li>
+<p>Erstellung zweier Mindmaps (strukturierte Liste)</p>
+<ul>
+<li>Eine für Zahlen, Daten und Fakten</li>
+<li>Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen</li>
+</ul>
+</li>
+<li>
+<p>Erstelle eine Mindmap in ASCII-Textform</p>
+</li>
+<li>
+<p>Erstelle eine Mindmap als Mermaid-Diagramm</p>
+</li>
+<li>
+<p>Erstelle eine Mindmap mit hellem Hintergrund</p>
+</li>
+<li>
+<p>Erstelle eine SVG-Darstellung der Mindmap, verwende ein hierarchisches Layout mit verschiedenen Farben und Formen</p>
+</li>
+<li>
+<p>Erstelle ein Flussdiagramm mit hellem Hintergrund</p>
+</li>
+</ul>
+<h3 id="ascii-mindmap"><strong>ASCII-Mindmap</strong> </h3>
+<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code>E-Mobilität
+├── HUK-E-Barometer
+│   ├── Akzeptanzrate 2024: 65 %
+│   ├── Hauptgründe: Infrastruktur, Kosten
+└── Innovationen
+    ├── Cell Caps
+    └── Cell Envelopes
+</code></pre><h3 id="mermaid-diagramm"><strong>Mermaid-Diagramm</strong> </h3>
+<div class="mermaid">mindmap
+  root((E-Mobilität))
+    HUK-E-Barometer
+      Akzeptanzrate: 65 %
+      Hauptgründe: Infrastruktur, Kosten
+    Innovationen
+      Cell Caps
+      Cell Envelopes
+</div><hr>
+<h2 id="fachbegriff-glossar">Fachbegriff-Glossar </h2>
+<h3 id="batterietechnologie">Batterietechnologie </h3>
+<ul>
+<li><strong>Cell-to-Pack (CTP)</strong>: Technologie zur direkten Integration von Batteriezellen in das Batteriegehäuse, ohne separate Module.</li>
+<li><strong>Cell Caps</strong>: Spezielle Abdeckungen für Batteriezellen zur Verbesserung der Sicherheit und Leistung.</li>
+<li><strong>Cell Envelopes</strong>: Schutzhüllen für Batteriezellen, die zur Temperaturregulierung und mechanischen Stabilisierung beitragen.</li>
+</ul>
+<h3 id="fahrzeugsysteme">Fahrzeugsysteme </h3>
+<ul>
+<li><strong>Drive Pilot</strong>: Autonomes Fahrsystem von Mercedes-Benz für teilautomatisiertes Fahren.</li>
+<li><strong>RDKS-Sensoren</strong>: Reifendruck-Kontrollsysteme zur kontinuierlichen Überwachung des Reifendrucks.</li>
+<li><strong>Security Gateway</strong>: Sicherheitssystem zur Kontrolle und Beschränkung des Zugriffs auf Fahrzeugdaten.</li>
+</ul>
+<h3 id="wartung-und-reparatur">Wartung und Reparatur </h3>
+<ul>
+<li><strong>Spot-Repair</strong>: Reparaturmethode für kleinere Lackschäden mit minimalen Materialeinsatz.</li>
+<li><strong>HV-Plattform</strong>: Hochvolt-Plattform für Elektrofahrzeuge.</li>
+<li><strong>Statische Batterieprüfung</strong>: Testverfahren zur schnellen Diagnose von E-Auto-Batterien.</li>
+</ul>
+<h3 id="assistenzsysteme">Assistenzsysteme </h3>
+<ul>
+<li><strong>Fahrerassistenzsysteme</strong>: Elektronische Systeme zur Unterstützung des Fahrers.</li>
+<li><strong>Kalibrierung</strong>: Einstellung und Abstimmung von Sensoren und Systemen für optimale Funktion.</li>
+</ul>
+<p><em>Hinweis: Dieses Glossar wird kontinuierlich erweitert und aktualisiert.</em></p>
+<hr>
+<h2 id="latex"><strong>Latex</strong> </h2>
+<ul>
+<li>Prüfe Grammatik, Rechtschreibung, Klarheit, Prägnanz, Redundanz</li>
+<li>Erstelle Latex ohne Präambel</li>
+</ul>
+<hr>
+<h2 id="fragenkatalog-für-anki"><strong>Fragenkatalog für Anki</strong> </h2>
+<ol>
+<li><strong>Was ist Cell-to-Pack (CTP)?</strong>
+<ul>
+<li>Antwort: Technologie zur direkten Integration von Batteriezellen ins Gehäuse.</li>
+</ul>
+</li>
+<li><strong>Welches Potenzial hat E-Mobilität laut Müller 2024?</strong>
+<ul>
+<li>Antwort: CO2-Reduktion um 40 % bis 2030.</li>
+</ul>
+</li>
+<li><strong>Welche Vorteile bietet Spot-Repair?</strong>
+<ul>
+<li>Antwort: Kosteneffizient bei kleinen Schäden, weniger Materialverbrauch.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lernmethoden"><strong>Lernmethoden</strong> </h2>
+<h3 id="methodenbeschreibung"><strong>Methodenbeschreibung</strong> </h3>
+<ul>
+<li><strong>Concept Mapping</strong>: Visualisierung von Zusammenhängen zwischen Fachbegriffen und Konzepten.</li>
+<li><strong>Spaced Repetition</strong>: Wiederholung in gestaffelten Intervallen:
+<ul>
+<li>Tag 1, Tag 3, Tag 7, Tag 15, Tag 30.</li>
+</ul>
+</li>
+<li><strong>Peer Learning</strong>: Konzepte gegenseitig erklären, um Verständnis zu vertiefen.</li>
+<li>HISTORISCHE ENTWICKLUNG</li>
+<li>EXPERIMENTELLES LERNEN</li>
+</ul>
+<h2 id="code">Code </h2>
+<ul>
+<li>Prüfe den Code</li>
+<li>Erstelle docstring und deutsche Kommentare</li>
+<li>Ertselle ein Code-Beschreibung</li>
+<li>Erkläre den Code</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token triple-quoted-string string">"""
+Modul zur Analyse von Fahrzeugdaten und Wartungsinformationen
+
+Dieses Modul enthält Funktionen zur Verarbeitung und Analyse von:
+- Batteriedaten
+- Wartungsintervallen
+- Diagnoseergebnissen
+"""</span>
+
+<span class="token keyword keyword-class">class</span> <span class="token class-name">FahrzeugAnalyse</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""Klasse zur Analyse von Fahrzeugdaten."""</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fahrzeug_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Initialisiert die Fahrzeuganalyse.
+
+        Args:
+            fahrzeug_id (str): Eindeutige Fahrzeug-Identifikationsnummer
+        """</span>
+        self<span class="token punctuation">.</span>fahrzeug_id <span class="token operator">=</span> fahrzeug_id
+        self<span class="token punctuation">.</span>wartungshistorie <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">batterie_analyse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> messwerte<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Analysiert Batteriedaten und erstellt einen Diagnosebericht.
+
+        Args:
+            messwerte (dict): Dictionary mit Batteriekennwerten
+
+        Returns:
+            dict: Analyseergebnisse mit Handlungsempfehlungen
+        """</span>
+        ergebnisse <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'status'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>_bewerte_batteriezustand<span class="token punctuation">(</span>messwerte<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token string">'empfehlungen'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>_erstelle_empfehlungen<span class="token punctuation">(</span>messwerte<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword keyword-return">return</span> ergebnisse
+
+    <span class="token keyword keyword-def">def</span> <span class="token function">_bewerte_batteriezustand</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> messwerte<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Interne Methode zur Bewertung des Batteriezustands.
+
+        Args:
+            messwerte (dict): Batteriekennwerte
+
+        Returns:
+            str: Bewertung des Batteriezustands
+        """</span>
+        <span class="token comment"># Implementierung der Bewertungslogik</span>
+        <span class="token keyword keyword-pass">pass</span>
+
+<span class="token comment"># Beispiel für die Verwendung</span>
+<span class="token keyword keyword-if">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    analyse <span class="token operator">=</span> FahrzeugAnalyse<span class="token punctuation">(</span><span class="token string">"WDD1234567"</span><span class="token punctuation">)</span>
+    testdaten <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'spannung'</span><span class="token punctuation">:</span> <span class="token number">380.5</span><span class="token punctuation">,</span>
+        <span class="token string">'kapazität'</span><span class="token punctuation">:</span> <span class="token number">75.3</span><span class="token punctuation">,</span>
+        <span class="token string">'temperatur'</span><span class="token punctuation">:</span> <span class="token number">25.4</span>
+    <span class="token punctuation">}</span>
+    ergebnis <span class="token operator">=</span> analyse<span class="token punctuation">.</span>batterie_analyse<span class="token punctuation">(</span>testdaten<span class="token punctuation">)</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Analyseergebnis: </span><span class="token interpolation"><span class="token punctuation">{</span>ergebnis<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+</code></pre><p>\newpage</p>
+<h2 id="erarbeitung-und-vertiefung-von-fachtexten">Erarbeitung und Vertiefung von Fachtexten </h2>
+<ol>
+<li>
+<p>Erstellung einer Textanalyse</p>
+</li>
+<li>
+<p>Erstellung eines Exzerpts (beachte <a href="http://exzerpieren-anweisung.md">exzerpieren-anweisung.md</a>)</p>
+</li>
+<li>
+<p>Erkläre</p>
+</li>
+<li>
+<p>Erstellung eines Fragenkatalogs für Anki</p>
+</li>
+<li>
+<p>Erstellung einer Bildanalyse</p>
+</li>
+<li>
+<p>Erstellung zweier Mindmaps (strukturierte Liste)</p>
+<ul>
+<li>Eine für Zahlen, Daten und Fakten</li>
+<li>Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen</li>
+</ul>
+</li>
+<li>
+<p>Kritische Reflexion</p>
+</li>
+<li>
+<p>Fachbegriff-Glossar</p>
+<ul>
+<li>Strukturierte Lernziele</li>
+<li>Umfassendes Fachbegriff-Glossar</li>
+<li>Kapitelzusammenfassungen</li>
+</ul>
+</li>
+<li>
+<p>Erstelle mir die drei bis fünf wichtigsten Konzepte mit Erklärung</p>
+</li>
+<li>
+<p>Lernmethoden</p>
+<ul>
+<li>CONCEPT MAPPING UND VERNETZTES DENKEN</li>
+<li>HISTORISCHE ENTWICKLUNG</li>
+<li>EXPERIMENTELLES LERNEN</li>
+<li>SYSTEMATISCHE WIEDERHOLUNG
+<ul>
+<li>Prinzip "spaced repetition" Konzepte in größeren Zeitabständen wiederholen</li>
+</ul>
+</li>
+<li>Peer Learning: Konzepte erklären</li>
+</ul>
+</li>
+</ol>
+</div>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#methodik-zur-textanalyse-und-wissensverarbeitung" class="md-toc-link"><p><strong>Methodik zur Textanalyse und Wissensverarbeitung</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#digitale-werkzeuge" class="md-toc-link">
+            <p><strong>Digitale Werkzeuge</strong></p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#todo-liste-textbearbeitung" class="md-toc-link"><p><strong>ToDo-Liste: Textbearbeitung</strong></p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#krafthand--todo-übersicht" class="md-toc-link"><p><strong>Krafthand – ToDo-Übersicht</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ausgabe-22-abgeschlossen" class="md-toc-link">
+            <p><strong>Ausgabe 22</strong> (abgeschlossen)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ausgabe-21-in-bearbeitung" class="md-toc-link">
+            <p><strong>Ausgabe 21</strong> (in Bearbeitung)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ausgabe-20" class="md-toc-link">
+            <p><strong>Ausgabe 20</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ausgabe-18-19" class="md-toc-link">
+            <p><strong>Ausgabe 18-19</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ausgabe-17" class="md-toc-link">
+            <p><strong>Ausgabe 17</strong></p>
+
+          </a></div>
+        </div>
+      </details>
+
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#exzerpieren-textanalyse-und--zusammenfassung" class="md-toc-link"><p><strong>Exzerpieren: Textanalyse und -zusammenfassung</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#vorgehen" class="md-toc-link">
+            <p><strong>Vorgehen</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#beispiel" class="md-toc-link">
+            <p><strong>Beispiel</strong></p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#visuelle-unterstützung-mindmaps" class="md-toc-link"><p><strong>Visuelle Unterstützung: Mindmaps</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#ascii-mindmap" class="md-toc-link">
+            <p><strong>ASCII-Mindmap</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#mermaid-diagramm" class="md-toc-link">
+            <p><strong>Mermaid-Diagramm</strong></p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#fachbegriff-glossar" class="md-toc-link"><p>Fachbegriff-Glossar</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#batterietechnologie" class="md-toc-link">
+            <p>Batterietechnologie</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#fahrzeugsysteme" class="md-toc-link">
+            <p>Fahrzeugsysteme</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#wartung-und-reparatur" class="md-toc-link">
+            <p>Wartung und Reparatur</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#assistenzsysteme" class="md-toc-link">
+            <p>Assistenzsysteme</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#latex" class="md-toc-link">
+            <p><strong>Latex</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#fragenkatalog-für-anki" class="md-toc-link">
+            <p><strong>Fragenkatalog für Anki</strong></p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#lernmethoden" class="md-toc-link"><p><strong>Lernmethoden</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#methodenbeschreibung" class="md-toc-link">
+            <p><strong>Methodenbeschreibung</strong></p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#code" class="md-toc-link">
+            <p>Code</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#erarbeitung-und-vertiefung-von-fachtexten" class="md-toc-link">
+            <p>Erarbeitung und Vertiefung von Fachtexten</p>
+
+          </a></div>
+        </div>
+      </details>
+
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+
+
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+
+
+
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>

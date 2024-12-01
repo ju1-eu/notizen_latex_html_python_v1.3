@@ -1,172 +1,149 @@
-# Exzerpieren: Textanalyse und -zusammenfassung
+# **Exzerpieren: Textanalyse und -zusammenfassung**
 
-## Definition und Herkunft
-"Exzerpt" (lateinisch "excerpere": auswählen) bezeichnet eine wissenschaftliche Arbeitsmethode zur systematischen Erfassung und Zusammenfassung von Texten. Diese Technik dient der präzisen Darstellung von Kerninhalten und zentralen Argumenten eines Textes.
+## **Definition und Herkunft**
+"Exzerpt" (lateinisch "excerpere": auswählen) bezeichnet eine wissenschaftliche Arbeitsmethode zur systematischen Erfassung und Zusammenfassung von Texten. Ziel ist die präzise Darstellung der Kerninhalte und zentralen Argumente eines Textes. Dies erleichtert sowohl die eigene Analyse als auch die spätere Verwendung der Inhalte.
 
-## Formen des Exzerpierens
+---
+
+## **Formen des Exzerpierens**
+
 1. **Allgemeine Zusammenfassung**
    - Systematische Erfassung der Kernthesen und Hauptargumente des gesamten Textes
    - Überblicksdarstellung der wesentlichen Inhalte
 
 2. **Spezifische Analyse**
    - Gezielte Filterung relevanter Inhalte für konkrete Forschungsfragen
-   - Fokussierte Auswertung spezifischer Textaspekte
+   - Fokussierte Auswertung spezifischer Textaspekte, z. B. zur Unterstützung einer Hypothese
 
-## Bestandteile eines Exzerpts
-- Vollständige bibliografische Angaben des Originaltexts
-- Strukturierte Zusammenfassung der Hauptinhalte
-- Dokumentation zentraler Argumente, Daten und Fakten
-- Klar gekennzeichnete eigene Anmerkungen und Querverweise
+---
 
-## Systematischer Arbeitsprozess
+## **Bestandteile eines Exzerpts**
+- **Bibliografische Angaben**: Autor, Titel, Erscheinungsjahr, Verlag und Seitenzahlen
+- **Strukturierte Zusammenfassung**: Präzise Darstellung der Hauptinhalte in logischer Reihenfolge
+- **Zentrale Argumente**: Dokumentation von Fakten, Thesen und Belegen
+- **Eigene Anmerkungen**: Kritische Kommentare, Querverweise und Ergänzungen
 
-### 1. Vorbereitung
-- Erfassung der vollständigen Quellenangaben
-- Definition der Kernthemen und Forschungsfragen
-- Erstellung einer systematischen Dokumentstruktur
+---
 
-### 2. Überblickslektüre
-- Vollständiges Lesen des Originaltexts
-- Erfassung der Hauptthemen und Textstruktur
-- Dokumentation initialer Fragestellungen
+## **Systematischer Arbeitsprozess**
 
-### 3. Detailanalyse
-- Systematische Textmarkierung
-- Identifikation von Kernaussagen und Schlüsselbegriffen
-- Hervorhebung zentraler Thesen
-- Markierung relevanter Belege und Zitate
+### **1. Vorbereitung**
+- **Quellenangaben**: Bibliografische Daten vollständig erfassen
+- **Forschungsfragen**: Kernthemen und Fragestellungen definieren
+- **Dokumentstruktur**: Logische Gliederung festlegen (z. B. in Abschnitte für Argumente, Daten und Zitate)
 
-### 4. Strukturierung
-- Logische Textgliederung
-- Analyse der Argumentationsstruktur
-- Identifikation von Hauptargumenten
-- Entwicklung einer klaren Gliederungsstruktur
+### **2. Überblickslektüre**
+- **Vollständiges Lesen**: Den gesamten Text lesen und die Hauptstruktur erfassen
+- **Themenübersicht**: Notieren, welche Hauptthesen und Argumente auffallen
+- **Fragen entwickeln**: Offene Punkte und neue Fragestellungen festhalten
+- **Übergang zur Detailanalyse vorbereiten**: Markieren Sie Abschnitte, die in der Detailanalyse besondere Aufmerksamkeit erfordern
 
-### 5. Zusammenfassung
-- Präzise Wiedergabe relevanter Textpassagen
-- Einhaltung der logischen Argumentationsstruktur
-- Eindeutige Kennzeichnung und Belegung von Zitaten
+### **3. Detailanalyse**
+- **Textmarkierung**: Kernaussagen, Schlüsselbegriffe und zentrale Belege hervorheben
+- **Kernaussagen**: Kurz und präzise formulieren
+- **Thesen und Argumente**: Zusammenhänge und Beispiele aufschreiben
+- **Rückbezug zur Überblickslektüre**: Prüfen Sie, ob die detaillierte Analyse Ihre ersten Eindrücke bestätigt oder korrigiert
+- **Iterative Verfeinerung**: Passen Sie Ihre Notizen aus der Überblickslektüre entsprechend an
 
-### 6. Kommentierung
-- Integration eigener Gedanken und Analysen
-- Einfügung relevanter Querverweise
-- Dokumentation kritischer Anmerkungen
-- Klare Kennzeichnung eigener Überlegungen
+### **4. Strukturierung**
+- **Gliederung**: Aussagen logisch ordnen (z. B. Problemstellung → Argumente → Lösungsvorschläge)
+- **Argumentationsstruktur**: Verbindungen zwischen Thesen und Belegen analysieren
+- **Klarheit**: Lücken oder Widersprüche im Text notieren
+- **Synthese**: Verbinden Sie die Erkenntnisse aus Überblickslektüre und Detailanalyse zu einem kohärenten Ganzen
 
-### 7. Qualitätskontrolle
-- Prüfung auf Vollständigkeit
-- Verifizierung aller Quellenangaben
-- Sicherstellung der Verständlichkeit
-- Überprüfung der Gesamtstruktur
+---
 
-### 8. Finalisierung
-- Erstellung eines Inhaltsverzeichnisses
-- Vergabe präziser Schlagworte
-- Digitale Archivierung in definierter Ordnerstruktur
-- Dokumentation von Datum und Version
-
-## Beispiele und Textarbeit
-
-### Kernaussagen identifizieren
+### **Beispiel – Detailanalyse**
 **Originaltext:**
 *„Die globale Erwärmung ist vor allem auf den erhöhten CO2-Ausstoß durch fossile Brennstoffe zurückzuführen. Dies hat schwerwiegende Folgen für Ökosysteme und die menschliche Gesellschaft."*
 
 **Kernaussage:**
-*„Hauptursache der globalen Erwärmung: erhöhter CO2-Ausstoß durch fossile Brennstoffe; Konsequenzen: Beeinträchtigung von Ökosystemen und Gesellschaft."*
+*„Globale Erwärmung: Hauptursache erhöhter CO2-Ausstoß; Folgen: Beeinträchtigung von Ökosystemen und Gesellschaft."*
 
-### Eigene Anmerkungen integrieren
-**Originaltext:**
-*„Die Verlagerung auf erneuerbare Energien könnte diese Entwicklung verlangsamen."*
+**Ergänzte Anmerkung:**
+*„Die Argumentation berücksichtigt die Hauptursache, vernachlässigt jedoch mögliche technologische Lösungen wie CO2-Abscheidung."*
 
-**Kommentierte Fassung:**
-*„Die Autoren betonen das Potenzial erneuerbarer Energien, berücksichtigen jedoch nicht die sozioökonomischen Implementierungshürden wie Investitionskosten und Infrastrukturanpassungen."*
+---
 
-## Qualitätssicherung
+## **Visualisierung des Arbeitsprozesses**
+### **Schrittweises Vorgehen:**
+```plaintext
+1. Vorbereitung      → Bibliografische Angaben, Fragestellung
+2. Überblickslektüre → Lesen, Hauptthesen notieren
+3. Detailanalyse     → Markieren, Kernaussagen formulieren
+4. Strukturierung    → Logische Gliederung erstellen
+5. Zusammenfassung   → Hauptinhalte präzise darstellen
+6. Kommentierung     → Eigene Anmerkungen ergänzen
+7. Qualitätskontrolle→ Vollständigkeit und Präzision prüfen
+8. Finalisierung     → Archivieren und strukturieren
+```
 
-### Allgemeine Qualitätskriterien
-- [ ] Vollständige bibliografische Dokumentation
-- [ ] Präzise Seitenangaben bei Zitaten
-- [ ] Systematische Dokumentenstruktur
-- [ ] Klare Trennung von Original und Eigenleistung
-- [ ] Eindeutige Kennzeichnung von Zitaten
+---
 
-### Fachspezifische Dokumentation
+## **Fachspezifische Anforderungen**
 
-#### Naturwissenschaften (Physik/Mathematik)
-**Dokumentationsanforderungen:**
-- Mathematische Formeln und Herleitungen
-- Experimentelle Methoden und Aufbauten
-- Messwerte mit Fehlerrechnung
-- Einheitenkonsistenz
-- Theoretische Grundlagen
+### **Naturwissenschaften (z. B. Physik, Mathematik)**
+- **Erforderlich**:
+  - Mathematische Formeln
+  - Messdaten mit Fehlerangaben
+  - Konsistenz der Einheiten
+- **Beispiel:**
+  *„Die experimentellen Ergebnisse zeigen eine Abweichung von 2,3 % (vgl. Abb. 1)."*
+  *Eigene Anmerkung: „Einheitenkonsistenz muss überprüft werden."*
 
-**Qualitätskriterien:**
-- [ ] Mathematische Notation einheitlich
-- [ ] Experimentbeschreibungen vollständig
-- [ ] Fehlerrechnung durchgeführt
-- [ ] Einheiten konsistent verwendet
-- [ ] Theoretische Basis dokumentiert
+### **Technische Wissenschaften (z. B. Informatik, Elektronik)**
+- **Erforderlich**:
+  - Codeabschnitte und Versionierung
+  - Systemspezifikationen
+- **Beispiel:**
+  *Code-Dokumentation: „Die Funktion calc_temperature() berechnet die Umgebungstemperatur und ist im Modul SensorData v1.3 enthalten."*
+  *Anmerkung: „Fehlerhandling fehlt für Werte außerhalb des Messbereichs."*
 
-#### Technische Wissenschaften (Informatik/Elektronik)
-**Dokumentationsanforderungen:**
-- Programmcode mit Versionierung
-- Systemspezifikationen
-- Technische Zeichnungen und Schaltpläne
-- Test- und Messprotokolle
-- Sicherheitsrichtlinien
+### **Geisteswissenschaften (z. B. Philosophie, Geschichte)**
+- **Erforderlich**:
+  - Kontextuelle Einordnung von Zitaten
+  - Begriffsdefinitionen und deren historische Entwicklung
+- **Beispiel:**
+  *Begriffsdefinition: „Der Begriff 'Aufklärung' wird im Text im Kantischen Sinne verwendet."*
+  *Anmerkung: „Moderne Interpretationen des Begriffs sollten zusätzlich berücksichtigt werden."*
 
-**Qualitätskriterien:**
-- [ ] Code-Dokumentation vollständig
-- [ ] Technische Zeichnungen normgerecht
-- [ ] Messverfahren beschrieben
-- [ ] Sicherheitsaspekte berücksichtigt
-- [ ] Versionierung implementiert
+---
 
-#### Ingenieurwesen (KFZ-Technik)
-**Dokumentationsanforderungen:**
-- Technische Spezifikationen
-- Normen und Richtlinien
-- Mess- und Prüfprotokolle
-- Wartungsdokumentation
-- Sicherheitsvorschriften
+## **Qualitätskontrolle**
+### **Erweiterte Checkliste**:
+- [x] Vollständige Quellenangaben vorhanden
+- [x] Alle Thesen und Argumente logisch dargestellt
+- [x] Trennung von Originaltext und Eigenleistung eindeutig
+- [x] Zitate präzise und belegt
+- [x] Verständlichkeit überprüft
+- [x] Fachbegriffe korrekt verwendet und erklärt
+- [x] Zitatlänge angemessen (nicht zu lang, nicht aus dem Kontext gerissen)
+- [x] Querverweise und Verknüpfungen nachvollziehbar
 
-**Qualitätskriterien:**
-- [ ] Technische Daten vollständig
-- [ ] Normverweise aktuell
-- [ ] Prüfprotokolle standardisiert
-- [ ] Wartungsintervalle definiert
-- [ ] Sicherheitshinweise dokumentiert
+---
 
-### Qualitätsdokumentation
+## **Versionskontrolle: Beispiel**
+| **Version** | **Änderungsdatum** | **Bearbeiter** | **Prüfer**  | **Beschreibung**        | **Status**    |
+| ----------- | ------------------ | -------------- | ----------- | ----------------------- | ------------- |
+| 1.0         | 15.11.2023         | M. Mustermann  | Dr. Schmidt | Erster Entwurf erstellt | In Arbeit     |
+| 1.1         | 20.11.2023         | M. Mustermann  | Prof. Weber | Ergänzung: Beispiele    | Überarbeitet  |
+| 2.0         | 25.11.2023         | K. Beispiel    | Dr. Schmidt | Endgültige Freigabe     | Abgeschlossen |
 
-#### Prüfprotokoll
-- Prüfdatum:
-- Fachbereich:
-- Angewandte Checkliste:
-- Prüfergebnis:
-- Anmerkungen:
-- Erforderliche Nacharbeiten:
-- Freigabevermerk:
+---
 
-#### Versionskontrolle
-- Versionsnummer:
-- Änderungsdatum und Bearbeiter:
-- Änderungsbeschreibung:
-- Dokumentenstatus:
-- Freigabestatus:
+### **Vermeidung typischer Fehler**
+1. **Unklare Quellenangaben vermeiden**:
+   - Nicht korrekt: *„CO2-Reduktion ist wichtig."*
+   - Korrekt: *„CO2-Reduktion wird als wesentlich betrachtet (vgl. Müller 2023, S. 12)."*
 
-## Vermeidung typischer Fehler
+2. **Eigenleistung eindeutig trennen**:
+   - Nicht korrekt: *„Der Text sagt, dass fossile Energien problematisch sind, und ich finde das auch."*
+   - Korrekt: *„Der Text beschreibt fossile Energien als problematisch (vgl. Autor 2023). [Eigene Anmerkung: Eine differenziertere Betrachtung der Kosten ist nötig.]"*
 
-### 1. Klare Trennung von Originaltext und Eigenleistung
-**Nicht korrekt:**
-*„Die globale Erwärmung ist problematisch, und meiner Meinung nach handeln Politiker zu langsam."*
+3. **Umgang mit Fachbegriffen**:
+   - Nicht korrekt: *„Die Quantenfluktuation beeinflusst das System."*
+   - Korrekt: *„Die Quantenfluktuation [Definition: spontane Energieschwankungen im Vakuum] beeinflusst das System (vgl. Einstein 1935)."*
 
-**Korrekt:**
-*„Die globale Erwärmung wird im Text als problematische Entwicklung dargestellt. [Eigene Anmerkung: Die politischen Reaktionszeiten erscheinen für effektive Gegenmaßnahmen zu lang.]"*
-
-### 2. Präzise Quellenangaben
-**Nicht korrekt:**
-*„Erneuerbare Energien bieten eine nachhaltige Lösung."*
-
-**Korrekt:**
-*„Erneuerbare Energien werden als nachhaltige Lösungsstrategie vorgeschlagen (vgl. Müller 2023, S. 15)."*
+4. **Angemessene Zitatlänge**:
+   - Zu lang: *[Vollständiger Absatz von 200 Wörtern zitiert]*
+   - Korrekt: *„Der Autor betont besonders die 'zentrale Rolle der Energieeffizienz' (Schmidt 2023, S. 45) und entwickelt daraus sein Hauptargument."*

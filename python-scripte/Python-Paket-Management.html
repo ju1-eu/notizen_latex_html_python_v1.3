@@ -1,0 +1,948 @@
+<!DOCTYPE html><html><head>
+      <title>Python-Paket-Management</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link rel="stylesheet" href="file:////Users/jan/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.8.15/crossnote/dependencies/katex/katex.min.css">
+
+
+
+
+
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+
+
+      <div class="crossnote markdown-preview  ">
+
+<h1 id="python-paket-management-unter-macos">Python Paket-Management unter macOS </h1>
+<h2 id="virtuelle-umgebung-einrichten">Virtuelle Umgebung einrichten </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Terminal öffnen und zum Projektverzeichnis navigieren</span>
+<span class="token comment"># Virtuelle Umgebung deaktivieren</span>
+deactivate
+<span class="token comment"># Optional: Virtuelle Umgebung löschen</span>
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> venv
+<span class="token comment"># Virtuelle Umgebung erstellen</span>
+python3 <span class="token parameter variable">-m</span> venv venv
+<span class="token comment"># Virtuelle Umgebung aktivieren</span>
+<span class="token builtin class-name">source</span> venv/bin/activate
+</code></pre><h2 id="pakete-installieren">Pakete installieren </h2>
+<table>
+<thead>
+<tr>
+<th><strong>Paket</strong></th>
+<th><strong>Funktionalität</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PyPDF2</code></td>
+<td>Verarbeitung von PDF-Dateien (z. B. Extraktion von Inhalten).</td>
+</tr>
+<tr>
+<td><code>pytube</code></td>
+<td>Herunterladen von Videos von YouTube.</td>
+</tr>
+<tr>
+<td><code>whisper</code></td>
+<td>Sprach-zu-Text-Transkription (z. B. OpenAI Whisper).</td>
+</tr>
+<tr>
+<td><code>youtube-transcript-api</code></td>
+<td>Abrufen von Transkripten von YouTube-Videos.</td>
+</tr>
+<tr>
+<td><code>black</code>, <code>isort</code>, <code>flake8</code></td>
+<td>Tools für Code-Formatierung, Import-Sortierung und Linting.</td>
+</tr>
+<tr>
+<td><code>mypy</code></td>
+<td>Statische Typprüfung für Python-Code.</td>
+</tr>
+<tr>
+<td><code>Pillow</code></td>
+<td>Bildbearbeitung (z. B. Extraktion und Verarbeitung von Bildern).</td>
+</tr>
+<tr>
+<td><code>PyMuPDF</code></td>
+<td>Verarbeitung von PDFs (Extraktion von Bildern, Texten etc.).</td>
+</tr>
+<tr>
+<td><code>rich</code></td>
+<td>Formatierte Konsolenausgabe (z. B. Fortschrittsbalken, farbige Logs).</td>
+</tr>
+<tr>
+<td><code>Jinja2</code></td>
+<td>Template-Engine für Python (z. B. HTML-Generierung).</td>
+</tr>
+<tr>
+<td><code>PyYAML</code></td>
+<td>Verarbeitung von YAML-Dateien (Konfiguration, Datenaustausch).</td>
+</tr>
+<tr>
+<td><code>tqdm</code></td>
+<td>Fortschrittsanzeigen für Schleifen und Iterationen.</td>
+</tr>
+<tr>
+<td><code>requests</code></td>
+<td>HTTP-Bibliothek für API-Anfragen und Webzugriffe.</td>
+</tr>
+<tr>
+<td><code>certifi</code></td>
+<td>Zertifikate für sichere HTTPS-Verbindungen.</td>
+</tr>
+<tr>
+<td><code>typing_extensions</code></td>
+<td>Erweiterte Typhinweise für Python &lt; 3.10.</td>
+</tr>
+</tbody>
+</table>
+<p>Die Pakete bilden ein kohärentes Set:</p>
+<ul>
+<li>Medienverarbeitung (Video, Audio, PDF, Bilder)</li>
+<li>Entwicklungswerkzeuge (Formatierung, Linting, Typing)</li>
+<li>Webinteraktion (Downloads, API-Zugriffe)</li>
+<li>Ausgabeformatierung und Benutzerinteraktion</li>
+</ul>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># pip aktualisieren</span>
+pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> pip
+<span class="token comment"># Benötigte Pakete installieren</span>
+pip <span class="token function">install</span> PyPDF2 pytube whisper youtube-transcript-api PyMuPDF Pillow rich
+<span class="token comment"># HTML &amp; PDF</span>
+pip <span class="token function">install</span> Jinja2 MarkupSafe PyYAML tqdm
+<span class="token comment"># Tools installieren</span>
+pip <span class="token function">install</span> black isort flake8 mypy pipdeptree
+</code></pre><h2 id="pakete-in-requirementstxt-speichern">Pakete in requirements.txt speichern </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Alle installierten Pakete in requirements.txt speichern</span>
+pip freeze <span class="token operator">&gt;</span> requirements.txt
+<span class="token comment"># Inhalt anzeigen</span>
+<span class="token function">cat</span> requirements.txt
+<span class="token comment"># Alle Pakete aus der requirements.txt installieren</span>
+pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt
+</code></pre><h2 id="pakete-aktualisieren">Pakete aktualisieren </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Aktuelle Paketliste anzeigen</span>
+pip list
+<span class="token comment"># Veraltete Pakete anzeigen</span>
+pip list <span class="token parameter variable">--outdated</span>
+<span class="token comment"># Alle Pakete aktualisieren</span>
+pip list <span class="token parameter variable">--outdated</span> <span class="token operator">|</span> <span class="token function">cut</span> <span class="token parameter variable">-d</span> <span class="token string">' '</span> <span class="token parameter variable">-f1</span> <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-n</span> +3 <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-n1</span> pip <span class="token function">install</span> <span class="token parameter variable">-U</span>
+<span class="token comment"># Nach der Aktualisierung requirements.txt erneuern</span>
+pip freeze <span class="token operator">&gt;</span> requirements.txt
+</code></pre><h2 id="troubleshooting">Troubleshooting </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Cache leeren bei Problemen</span>
+pip cache purge
+
+<span class="token comment"># Paket neu installieren</span>
+pip uninstall PyPDF2
+pip <span class="token function">install</span> PyPDF2
+
+<span class="token comment"># Konfliktprüfung</span>
+pip check
+
+<span class="token comment"># Requirements als Graph visualisieren</span>
+pip <span class="token function">install</span> pipdeptree
+pipdeptree
+</code></pre><h2 id="code-qualität-prüfen">Code-Qualität prüfen </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pip <span class="token function">install</span> black isort flake8 mypy
+<span class="token comment"># black: Gibt aus, welche Dateien neu formatiert wurden.</span>
+black create_gallery.py extract_pdf_images.py pdf_extractor.py
+<span class="token comment"># isort: Ändert die Importreihenfolge oder zeigt fehlerhafte Sortierungen an.</span>
+isort create_gallery.py extract_pdf_images.py pdf_extractor.py
+<span class="token comment"># flake8: Gibt Warnungen oder Fehler basierend auf PEP8-Konventionen aus</span>
+flake8 create_gallery.py extract_pdf_images.py pdf_extractor.py
+<span class="token comment"># mypy: Gibt Typfehler aus, falls die Typannotationen nicht korrekt sind.</span>
+mypy create_gallery.py extract_pdf_images.py pdf_extractor.py
+
+<span class="token comment"># PDF Kapitel Extraktor *.pdf, Seiten von bis?</span>
+python pdf_extractor.py
+<span class="token comment"># Extrahiere Bilder aus *.pdf</span>
+python extract_pdf_images.py
+<span class="token comment"># Gallerie: gallery/*_gallery.html</span>
+python create_gallery.py
+
+<span class="token comment"># aktuelle Verzeichnis ($(pwd)) wird zum Python-Suchpfad hinzugefügt. Python Module und Pakete, die sich in diesem Verzeichnis befinden, erkennt und importieren kann.</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">PYTHONPATH</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${PYTHONPATH}</span>:<span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>"</span>
+<span class="token comment"># Im Entwicklungsmodus wird das Paket nicht kopiert und installiert, sondern als Referenz zur aktuellen Verzeichnisstruktur verlinkt.</span>
+<span class="token comment"># Änderungen am Quellcode sind sofort in der Umgebung verfügbar, ohne dass man das Paket erneut installieren muss.</span>
+<span class="token comment"># Voraussetzung: setup.py</span>
+pip <span class="token function">install</span> <span class="token parameter variable">-e</span> <span class="token builtin class-name">.</span>
+</code></pre><p><strong>Konfiguration:</strong></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># .flake8</span>
+<span class="token punctuation">[</span>flake8<span class="token punctuation">]</span>
+<span class="token comment"># Basis-Konfiguration</span>
+max-line-length <span class="token operator">=</span> <span class="token number">100</span>
+max-complexity <span class="token operator">=</span> <span class="token number">10</span>
+statistics <span class="token operator">=</span> True
+docstring-convention <span class="token operator">=</span> google
+
+<span class="token comment"># Formatierung</span>
+<span class="token function">format</span> <span class="token operator">=</span> %<span class="token punctuation">(</span>path<span class="token punctuation">)</span>s:%<span class="token punctuation">(</span>row<span class="token punctuation">)</span>d:%<span class="token punctuation">(</span>col<span class="token punctuation">)</span>d: %<span class="token punctuation">(</span>code<span class="token punctuation">)</span>s %<span class="token punctuation">(</span>text<span class="token punctuation">)</span>s
+filename <span class="token operator">=</span> *.py
+
+<span class="token comment"># Ignorierte Fehler</span>
+ignore <span class="token operator">=</span> E203, W503, E226
+
+<span class="token comment"># Ausgeschlossene Pfade</span>
+exclude <span class="token operator">=</span>
+    venv/
+    .git/
+    __pycache__/
+    build/
+    dist/
+    *.egg-info
+    .eggs/
+    .tox/
+    .mypy_cache/
+
+
+<span class="token comment"># pyproject.toml (für black und isort)</span>
+<span class="token comment"># Python Code-Formatierung</span>
+<span class="token punctuation">[</span>tool.black<span class="token punctuation">]</span>
+line-length <span class="token operator">=</span> <span class="token number">100</span>
+target-version <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'py313'</span><span class="token punctuation">]</span>
+include <span class="token operator">=</span> <span class="token string">'\.pyx?$'</span>
+exclude <span class="token operator">=</span> <span class="token string">'/(\.git|\.hg|\.mypy_cache|\.tox|\.venv|_build|dist)/'</span>
+
+<span class="token comment"># Import-Sortierung</span>
+<span class="token punctuation">[</span>tool.isort<span class="token punctuation">]</span>
+profile <span class="token operator">=</span> <span class="token string">"black"</span>
+line_length <span class="token operator">=</span> <span class="token number">100</span>
+multi_line_output <span class="token operator">=</span> <span class="token number">3</span>
+include_trailing_comma <span class="token operator">=</span> <span class="token boolean">true</span>
+force_grid_wrap <span class="token operator">=</span> <span class="token number">0</span>
+use_parentheses <span class="token operator">=</span> <span class="token boolean">true</span>
+ensure_newline_before_comments <span class="token operator">=</span> <span class="token boolean">true</span>
+
+<span class="token comment"># Typ-Prüfung</span>
+<span class="token punctuation">[</span>tool.mypy<span class="token punctuation">]</span>
+python_version <span class="token operator">=</span> <span class="token string">"3.13"</span>
+warn_return_any <span class="token operator">=</span> <span class="token boolean">true</span>
+warn_unused_configs <span class="token operator">=</span> <span class="token boolean">true</span>
+disallow_untyped_defs <span class="token operator">=</span> <span class="token boolean">true</span>
+check_untyped_defs <span class="token operator">=</span> <span class="token boolean">true</span>
+ignore_missing_imports <span class="token operator">=</span> <span class="token boolean">true</span>
+
+
+<span class="token comment"># setup.cfg</span>
+<span class="token punctuation">[</span>flake8<span class="token punctuation">]</span>
+max-line-length <span class="token operator">=</span> <span class="token number">100</span>
+
+<span class="token comment"># Ignorierte Fehler</span>
+extend-ignore <span class="token operator">=</span> D103,D209,D210,D400,D401,F401
+
+<span class="token comment"># Ausgeschlossene Pfade</span>
+exclude <span class="token operator">=</span>
+    .git,
+    __pycache__,
+    build,
+    dist,
+    .eggs,
+    *.egg,
+</code></pre><h2 id="pre-commit-tool">pre-commit-Tool </h2>
+<ol>
+<li>
+<p><strong>pre-commit installieren</strong><br>
+Installiere <code>pre-commit</code> in der virtuellen Umgebung:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token comment"># Pre-commit Setup</span>
+pip <span class="token function">install</span> pre-commit            <span class="token comment"># Tool installieren</span>
+pre-commit <span class="token parameter variable">--version</span>             <span class="token comment"># Version prüfen</span>
+<span class="token comment"># Installation/Update der Hooks</span>
+pre-commit clean                 <span class="token comment"># Cache leeren</span>
+pre-commit <span class="token function">install</span>              <span class="token comment"># Hooks installieren</span>
+pre-commit <span class="token function">install</span> --install-hooks
+pre-commit autoupdate           <span class="token comment"># Hooks aktualisieren</span>
+pre-commit run --all-files      <span class="token comment"># Alle Hooks testen</span>
+</code></pre></li>
+<li>
+<p><strong>Pre-Commit-Hooks testen</strong><br>
+Überprüfe, ob die Hooks korrekt funktionieren:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>./update_python_packages.sh
+./check_pythoncode_quality.sh
+</code></pre></li>
+</ol>
+<p><code>.pre-commit-config.yaml</code></p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>repos:
+  # Standard Checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace # Entfernt Leerzeichen am Zeilenende
+      - id: end-of-file-fixer # Stellt sicher, dass Dateien mit einer neuen Zeile enden
+      - id: check-yaml # Validiert die YAML-Syntax
+      - id: check-added-large-files
+        args: ['--maxkb=800'] # Erhöhe die Grenze (z. B. auf 800 KB)
+      - id: check-merge-conflict # Warnt vor verbleibenden Merge-Konflikten
+      - id: mixed-line-ending # Konvertiert zu Unix-Zeilenenden (LF)
+
+  # Python Code-Formatierung
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        language_version: python3.13
+        files: \.py$ # Nur Python-Dateien prüfen
+
+  # Import-Sortierung
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        files: \.py$ # Nur Python-Dateien prüfen
+
+  # Code-Style &amp; Dokumentation
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-docstrings # Docstring-Check
+        args: [--max-line-length=100, --ignore=D203]
+        files: \.py$ # Nur Python-Dateien prüfen
+
+  # Typprüfung
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.13.0
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - types-PyYAML
+          - types-requests
+          - types-Pillow
+        files: \.py$
+
+  # LaTeX Syntaxprüfung (optional)
+  - repo: https://github.com/cmhughes/latexindent.pl
+    rev: V3.24.4
+    hooks:
+      - id: latexindent
+        args: ['-l']
+        files: '.*\.tex$'
+
+  - repo: local
+    hooks:
+      - id: pytest
+        name: pytest
+        entry: pytest --cov --cov-report=term-missing
+        language: system
+        types: [python]
+        pass_filenames: false
+        verbose: true
+</code></pre><p><code>.github/workflow/ci.yml</code></p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+          pip install -r requirements-dev.txt
+
+      - name: Run code quality checks
+        run: |
+          source venv/bin/activate
+          ./check_pythoncode_quality.sh
+</code></pre><h2 id="projektspezifische-requirementstxt">Projektspezifische requirements.txt </h2>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code># requirements.in
+# Produktionsabhängigkeiten
+
+## PDF-Verarbeitung
+PyMuPDF
+PyPDF2
+
+## Medienverarbeitung
+Pillow
+pytube
+whisper
+youtube-transcript-api
+
+## Dokumentenverarbeitung
+markdown-it-py
+defusedxml
+Jinja2
+MarkupSafe
+
+## CLI &amp; Formatierung
+click
+rich
+tqdm
+
+## Konfiguration &amp; Utils
+PyYAML
+python-dotenv
+packaging
+
+## Netzwerk &amp; Encoding
+requests
+
+
+# requirements-dev.in
+# Entwicklungsabhängigkeiten
+
+## Basis-Abhängigkeiten
+-r requirements.in
+
+## Code-Formatierung &amp; Linting
+black
+flake8
+isort
+pycodestyle
+pyflakes
+mccabe
+
+## Typ-Prüfung
+mypy
+mypy-extensions
+typing_extensions
+types-Pillow
+types-PyYAML
+types-requests
+types-tqdm
+
+## Testen
+pytest
+pytest-cov
+coverage
+iniconfig
+pluggy
+
+## Tools
+pipdeptree
+pre-commit
+identify
+nodeenv
+virtualenv
+platformdirs
+pathspec
+cfgv
+distlib
+filelock
+
+## Abhängigkeiten von Entwicklungswerkzeugen
+build
+pip-tools
+pyproject-hooks
+setuptools
+wheel
+</code></pre><h1 id="projektstruktur">Projektstruktur </h1>
+<pre data-role="codeBlock" data-info="plaintext" class="language-plaintext plaintext"><code># Projektstruktur anzeigen
+tree -L 2 --dirsfirst
+# Projektstruktur erfolgt nach Python-Projektstandards
+# Ausgabe kommentieren
+</code></pre><h2 id="tipps-und-best-practices">Tipps und Best Practices </h2>
+<ol>
+<li>
+<p><strong>Virtuelle Umgebung</strong>:</p>
+<ul>
+<li>Immer in einer virtuellen Umgebung arbeiten</li>
+<li>Für jedes Projekt eine separate Umgebung erstellen</li>
+<li>Namen der virtuellen Umgebung (venv) in .gitignore aufnehmen</li>
+</ul>
+</li>
+<li>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Requirements.txt regelmäßig aktualisieren</li>
+<li>Version in Kommentaren dokumentieren</li>
+<li>Backup der funktionierenden requirements.txt anlegen</li>
+</ul>
+</li>
+<li>
+<p><strong>Sicherheit</strong>:</p>
+<ul>
+<li>Regelmäßig nach Sicherheitsupdates suchen</li>
+<li>Pakete nur aus vertrauenswürdigen Quellen installieren</li>
+<li>Bei Produktivnutzung fixe Versionen verwenden</li>
+</ul>
+</li>
+</ol>
+<h2 id="automatisierungsskript-i">Automatisierungsskript I </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># update_python_packages.sh</span>
+<span class="token comment"># Farben und Formatierung</span>
+<span class="token assign-left variable">GREEN</span><span class="token operator">=</span><span class="token string">'\033[0;32m'</span>
+<span class="token assign-left variable">BLUE</span><span class="token operator">=</span><span class="token string">'\033[0;34m'</span>
+<span class="token assign-left variable">RED</span><span class="token operator">=</span><span class="token string">'\033[0;31m'</span>
+<span class="token assign-left variable">YELLOW</span><span class="token operator">=</span><span class="token string">'\033[1;33m'</span>
+<span class="token assign-left variable">NC</span><span class="token operator">=</span><span class="token string">'\033[0m'</span>
+<span class="token assign-left variable">BOLD</span><span class="token operator">=</span><span class="token string">'\033[1m'</span>
+
+<span class="token comment"># Logging-Funktionen</span>
+<span class="token assign-left variable">log_file</span><span class="token operator">=</span><span class="token string">"update_log.txt"</span>
+
+<span class="token function-name function">setup_logging</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"=== Python Package Update Log <span class="token variable"><span class="token variable">$(</span><span class="token function">date</span><span class="token variable">)</span></span> ==="</span> <span class="token operator">&gt;</span> <span class="token string">"<span class="token variable">$log_file</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"[<span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token string">'+%Y-%m-%d %H:%M:%S'</span><span class="token variable">)</span></span>] <span class="token variable">$1</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$message</span>"</span> <span class="token operator">&gt;&gt;</span> <span class="token string">"<span class="token variable">$log_file</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"[INFO] <span class="token variable">$1</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${BLUE}</span><span class="token variable">${message}</span><span class="token variable">${NC}</span>"</span>
+    log <span class="token string">"<span class="token variable">$message</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"[SUCCESS] <span class="token variable">$1</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${GREEN}</span><span class="token variable">${message}</span><span class="token variable">${NC}</span>"</span>
+    log <span class="token string">"<span class="token variable">$message</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"[ERROR] <span class="token variable">$1</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${RED}</span><span class="token variable">${message}</span><span class="token variable">${NC}</span>"</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+    log <span class="token string">"ERROR: <span class="token variable">$1</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_warning</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"[WARNING] <span class="token variable">$1</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${YELLOW}</span><span class="token variable">${message}</span><span class="token variable">${NC}</span>"</span>
+    log <span class="token string">"WARNING: <span class="token variable">$1</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token entity" title="\n">\n</span><span class="token variable">${BOLD}</span>=== <span class="token variable">$1</span> ===<span class="token variable">${NC}</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${BOLD}</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> <span class="token string">'+%Y-%m-%d %H:%M:%S'</span><span class="token variable">)</span></span><span class="token variable">${NC}</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"----------------------------------------"</span>
+    log <span class="token string">"=== <span class="token variable">$1</span> ==="</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Cleanup-Funktion</span>
+<span class="token function-name function">cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> <span class="token string">"<span class="token variable">$VIRTUAL_ENV</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_status <span class="token string">"Führe Cleanup durch..."</span>
+        deactivate <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null <span class="token operator">||</span> <span class="token boolean">true</span>
+    <span class="token keyword keyword-fi">fi</span>
+    print_status <span class="token string">"Skript beendet."</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin class-name">trap</span> cleanup EXIT
+
+<span class="token comment"># Hauptskript</span>
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    setup_logging
+    print_header <span class="token string">"Python Package Updater Start"</span>
+
+    <span class="token comment"># Prüfe Python-Installation</span>
+    <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> python3 <span class="token operator">&amp;&gt;</span> /dev/null<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Python3 nicht gefunden!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Prüfe virtuelle Umgebung</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-d</span> <span class="token string">"venv"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Virtuelle Umgebung (venv/) nicht gefunden!"</span>
+        print_status <span class="token string">"Erstellen Sie eine neue virtuelle Umgebung mit: python3 -m venv venv"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Aktiviere virtuelle Umgebung</span>
+    print_status <span class="token string">"Aktiviere virtuelle Umgebung..."</span>
+    <span class="token builtin class-name">source</span> venv/bin/activate <span class="token operator">||</span> <span class="token punctuation">{</span>
+        print_error <span class="token string">"Fehler beim Aktivieren der virtuellen Umgebung!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># Pip Update</span>
+    print_header <span class="token string">"Aktualisiere pip"</span>
+    pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> pip <span class="token operator">||</span> <span class="token punctuation">{</span>
+        print_error <span class="token string">"Pip-Update fehlgeschlagen!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># Installiere oder aktualisiere pip-tools</span>
+    print_header <span class="token string">"Installiere/aktualisiere pip-tools"</span>
+    pip <span class="token function">install</span> <span class="token parameter variable">--upgrade</span> pip-tools <span class="token operator">||</span> <span class="token punctuation">{</span>
+        print_error <span class="token string">"Installation von pip-tools fehlgeschlagen!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment"># Kompiliere requirements.txt</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"requirements.in"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_header <span class="token string">"Kompiliere requirements.txt"</span>
+        <span class="token keyword keyword-if">if</span> pip-compile requirements.in --strip-extras<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_success <span class="token string">"requirements.txt erfolgreich erstellt."</span>
+        <span class="token keyword keyword-else">else</span>
+            print_error <span class="token string">"Fehler beim Kompilieren von requirements.txt"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"requirements.in nicht gefunden!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Kompiliere requirements-dev.txt</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> <span class="token string">"requirements-dev.in"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_header <span class="token string">"Kompiliere requirements-dev.txt"</span>
+        <span class="token keyword keyword-if">if</span> pip-compile requirements-dev.in --strip-extras<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_success <span class="token string">"requirements-dev.txt erfolgreich erstellt."</span>
+        <span class="token keyword keyword-else">else</span>
+            print_error <span class="token string">"Fehler beim Kompilieren von requirements-dev.txt"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"requirements-dev.in nicht gefunden!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Installiere Abhängigkeiten</span>
+    print_header <span class="token string">"Installiere Produktionsabhängigkeiten"</span>
+    <span class="token keyword keyword-if">if</span> pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements.txt<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_success <span class="token string">"Produktionsabhängigkeiten installiert."</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"Fehler beim Installieren der Produktionsabhängigkeiten!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    print_header <span class="token string">"Installiere Entwicklungsabhängigkeiten"</span>
+    <span class="token keyword keyword-if">if</span> pip <span class="token function">install</span> <span class="token parameter variable">-r</span> requirements-dev.txt<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_success <span class="token string">"Entwicklungsabhängigkeiten installiert."</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"Fehler beim Installieren der Entwicklungsabhängigkeiten!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    print_success <span class="token string">"Update-Prozess erfolgreich abgeschlossen!"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Starte Hauptprogramm</span>
+main <span class="token string">"<span class="token variable">$@</span>"</span>
+</code></pre><p>Nutzung:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">chmod</span> +x update_python_packages.sh
+<span class="token comment">#source venv/bin/activate</span>
+./update_python_packages.sh
+</code></pre><h2 id="automatisierungsskript-ii">Automatisierungsskript II </h2>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># check_pythoncode_quality.sh</span>
+<span class="token comment"># Farben und Formatierung</span>
+<span class="token assign-left variable">GREEN</span><span class="token operator">=</span><span class="token string">'\033[0;32m'</span>
+<span class="token assign-left variable">BLUE</span><span class="token operator">=</span><span class="token string">'\033[0;34m'</span>
+<span class="token assign-left variable">RED</span><span class="token operator">=</span><span class="token string">'\033[0;31m'</span>
+<span class="token assign-left variable">YELLOW</span><span class="token operator">=</span><span class="token string">'\033[1;33m'</span>
+<span class="token assign-left variable">NC</span><span class="token operator">=</span><span class="token string">'\033[0m'</span>
+<span class="token assign-left variable">BOLD</span><span class="token operator">=</span><span class="token string">'\033[1m'</span>
+
+<span class="token comment"># Ausgabefunktionen</span>
+<span class="token function-name function">print_header</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token entity" title="\n">\n</span><span class="token variable">${BOLD}</span>=== <span class="token variable">$1</span> ===<span class="token variable">${NC}</span>"</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"----------------------------------------"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_error</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${RED}</span>[ERROR] <span class="token variable">$1</span><span class="token variable">${NC}</span>"</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_success</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${GREEN}</span>[SUCCESS] <span class="token variable">$1</span><span class="token variable">${NC}</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_status</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${BLUE}</span>[INFO] <span class="token variable">$1</span><span class="token variable">${NC}</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">print_warning</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"<span class="token variable">${YELLOW}</span>[WARNING] <span class="token variable">$1</span><span class="token variable">${NC}</span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Dynamische Ermittlung der Python-Dateien</span>
+<span class="token function-name function">find_python_files</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">exclude_dirs</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"venv"</span> <span class="token string">"__pycache__"</span> <span class="token string">".git"</span> <span class="token string">"build"</span> <span class="token string">"dist"</span> <span class="token string">"*.egg-info"</span> <span class="token string">".eggs"</span> <span class="token string">".tox"</span> <span class="token string">".mypy_cache"</span><span class="token punctuation">)</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">find_args</span><span class="token operator">=</span><span class="token punctuation">(</span>-type f <span class="token parameter variable">-name</span> <span class="token string">'*.py'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword keyword-for">for</span> <span class="token for-or-select variable">dir</span> <span class="token keyword keyword-in">in</span> <span class="token string">"<span class="token variable">${exclude_dirs<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token punctuation">;</span> <span class="token keyword keyword-do">do</span>
+        <span class="token assign-left variable">find_args</span><span class="token operator">+=</span><span class="token punctuation">(</span>-not <span class="token parameter variable">-path</span> <span class="token string">"./<span class="token variable">$dir</span>/*"</span> <span class="token parameter variable">-not</span> <span class="token parameter variable">-path</span> <span class="token string">"./<span class="token variable">$dir</span>"</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-done">done</span>
+
+    <span class="token comment"># shellcheck disable=SC2207</span>
+    <span class="token assign-left variable">PYTHON_FILES</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token variable"><span class="token variable">$(</span><span class="token function">find</span> <span class="token builtin class-name">.</span> <span class="token string">"<span class="token variable">${find_args<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token variable">)</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Prüfe Voraussetzungen</span>
+<span class="token function-name function">check_requirements</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">tools</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"black"</span> <span class="token string">"isort"</span> <span class="token string">"flake8"</span> <span class="token string">"mypy"</span><span class="token punctuation">)</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">missing_tools</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    print_status <span class="token string">"Prüfe Voraussetzungen..."</span>
+
+    <span class="token comment"># Prüfe Python Version</span>
+    <span class="token assign-left variable">python_version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>python3 <span class="token parameter variable">-V</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> <span class="token parameter variable">-f2</span><span class="token variable">)</span></span>
+    print_status <span class="token string">"Gefundene Python-Version: <span class="token variable">$python_version</span>"</span>
+    <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> python3 <span class="token parameter variable">-c</span> <span class="token string">"import sys; exit(1 if sys.version_info &lt; (3,7) else 0)"</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Python 3.7 oder höher wird benötigt!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Prüfe virtuelle Umgebung</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-d</span> <span class="token string">"venv"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Virtuelle Umgebung (venv/) nicht gefunden!"</span>
+        print_status <span class="token string">"Möchten Sie eine neue virtuelle Umgebung erstellen? (j/n)"</span>
+        <span class="token builtin class-name">read</span> <span class="token parameter variable">-r</span> answer
+        <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$answer</span>"</span> <span class="token operator">=~</span> ^<span class="token punctuation">[</span>Jj<span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_status <span class="token string">"Erstelle neue virtuelle Umgebung..."</span>
+            <span class="token keyword keyword-if">if</span> python3 <span class="token parameter variable">-m</span> venv venv<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+                print_success <span class="token string">"Virtuelle Umgebung erfolgreich erstellt"</span>
+            <span class="token keyword keyword-else">else</span>
+                print_error <span class="token string">"Fehler beim Erstellen der virtuellen Umgebung!"</span>
+                print_status <span class="token string">"Führen Sie manuell aus: python3 -m venv venv"</span>
+                <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+            <span class="token keyword keyword-fi">fi</span>
+        <span class="token keyword keyword-else">else</span>
+            print_status <span class="token string">"Abbruch. Erstellen Sie eine neue virtuelle Umgebung mit: python3 -m venv venv"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Prüfe venv Struktur</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token operator">!</span> <span class="token parameter variable">-f</span> <span class="token string">"venv/bin/activate"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Virtuelle Umgebung scheint beschädigt zu sein!"</span>
+        print_status <span class="token string">"Versuche Reparatur durch Neuerstellen..."</span>
+        <span class="token function">rm</span> <span class="token parameter variable">-rf</span> venv
+        <span class="token keyword keyword-if">if</span> python3 <span class="token parameter variable">-m</span> venv venv<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_success <span class="token string">"Virtuelle Umgebung erfolgreich neu erstellt"</span>
+        <span class="token keyword keyword-else">else</span>
+            print_error <span class="token string">"Reparatur fehlgeschlagen!"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Aktiviere virtuelle Umgebung mit erweiterter Fehlerbehandlung</span>
+    print_status <span class="token string">"Aktiviere virtuelle Umgebung..."</span>
+    <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> <span class="token builtin class-name">source</span> venv/bin/activate <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Fehler beim Aktivieren der virtuellen Umgebung!"</span>
+        print_status <span class="token string">"Versuche alternative Aktivierungsmethode..."</span>
+
+        <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> <span class="token builtin class-name">.</span> venv/bin/activate <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span>/dev/null<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_error <span class="token string">"Aktivierung fehlgeschlagen!"</span>
+            print_status <span class="token string">"Mögliche Probleme:"</span>
+            print_status <span class="token string">"- Fehlerhafte Berechtigungen"</span>
+            print_status <span class="token string">"- Beschädigte virtuelle Umgebung"</span>
+            print_status <span class="token string">"- Shell-Kompatibilitätsprobleme"</span>
+            print_status <span class="token string">"Versuchen Sie:"</span>
+            print_status <span class="token string">"1. chmod -R 755 venv"</span>
+            print_status <span class="token string">"2. Neu erstellen mit: rm -rf venv &amp;&amp; python3 -m venv venv"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Prüfe erfolgreiche Aktivierung</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token parameter variable">-z</span> <span class="token string">"<span class="token variable">$VIRTUAL_ENV</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Virtuelle Umgebung wurde nicht korrekt aktiviert!"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token comment"># Zeige venv Status</span>
+    print_success <span class="token string">"Virtuelle Umgebung aktiv: <span class="token variable">$VIRTUAL_ENV</span>"</span>
+    print_status <span class="token string">"Python-Version in venv: <span class="token variable"><span class="token variable">$(</span>python <span class="token parameter variable">-V</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span><span class="token variable">)</span></span>"</span>
+
+    <span class="token comment"># Optional: Prüfe pip Installation und Version</span>
+    <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> pip <span class="token operator">&gt;</span>/dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"pip nicht gefunden in virtueller Umgebung!"</span>
+        print_status <span class="token string">"Installiere pip..."</span>
+        <span class="token keyword keyword-if">if</span> <span class="token function">curl</span> https://bootstrap.pypa.io/get-pip.py <span class="token operator">|</span> python<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            print_success <span class="token string">"pip erfolgreich installiert"</span>
+        <span class="token keyword keyword-else">else</span>
+            print_error <span class="token string">"pip Installation fehlgeschlagen!"</span>
+            <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token assign-left variable">pip_version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>pip <span class="token parameter variable">-V</span> <span class="token operator">|</span> <span class="token function">cut</span> -d<span class="token string">' '</span> <span class="token parameter variable">-f2</span><span class="token variable">)</span></span>
+    print_status <span class="token string">"pip Version: <span class="token variable">$pip_version</span>"</span>
+
+    <span class="token comment"># Prüfe Code-Qualitäts-Tools</span>
+    <span class="token keyword keyword-for">for</span> <span class="token for-or-select variable">tool</span> <span class="token keyword keyword-in">in</span> <span class="token string">"<span class="token variable">${tools<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token punctuation">;</span> <span class="token keyword keyword-do">do</span>
+        <span class="token keyword keyword-if">if</span> <span class="token operator">!</span> <span class="token builtin class-name">command</span> <span class="token parameter variable">-v</span> <span class="token string">"<span class="token variable">$tool</span>"</span> <span class="token operator">&amp;&gt;</span> /dev/null<span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+            <span class="token assign-left variable">missing_tools</span><span class="token operator">+=</span><span class="token punctuation">(</span><span class="token string">"<span class="token variable">$tool</span>"</span><span class="token punctuation">)</span>
+        <span class="token keyword keyword-fi">fi</span>
+    <span class="token keyword keyword-done">done</span>
+
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">${<span class="token operator">#</span>missing_tools<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_error <span class="token string">"Folgende Tools fehlen:"</span>
+        <span class="token keyword keyword-for">for</span> <span class="token for-or-select variable">tool</span> <span class="token keyword keyword-in">in</span> <span class="token string">"<span class="token variable">${missing_tools<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token punctuation">;</span> <span class="token keyword keyword-do">do</span>
+            <span class="token builtin class-name">echo</span> <span class="token string">"  - <span class="token variable">$tool</span>"</span>
+        <span class="token keyword keyword-done">done</span>
+        print_status <span class="token string">"Installation mit: pip install <span class="token variable">${missing_tools<span class="token punctuation">[</span>*<span class="token punctuation">]</span>}</span>"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Führe Tool aus und prüfe Ergebnis</span>
+<span class="token function-name function">run_tool</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">tool</span><span class="token operator">=</span><span class="token variable">$1</span>
+    <span class="token builtin class-name">shift</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">files</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"<span class="token variable">$@</span>"</span><span class="token punctuation">)</span>
+
+    print_header <span class="token string">"Führe <span class="token variable">$tool</span> aus"</span>
+
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">${<span class="token operator">#</span>files<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_warning <span class="token string">"Keine Dateien zum Prüfen gefunden."</span>
+        <span class="token builtin class-name">return</span> <span class="token number">0</span>
+    <span class="token keyword keyword-fi">fi</span>
+
+    <span class="token keyword keyword-if">if</span> <span class="token string">"<span class="token variable">$tool</span>"</span> <span class="token string">"<span class="token variable">${files<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_success <span class="token string">"<span class="token variable">$tool</span> erfolgreich ausgeführt"</span>
+        <span class="token builtin class-name">return</span> <span class="token number">0</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"<span class="token variable">$tool</span> hat Fehler gefunden"</span>
+        <span class="token builtin class-name">return</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Hauptfunktion</span>
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    print_header <span class="token string">"Python Code-Qualitätsprüfung"</span>
+    check_requirements
+
+    find_python_files
+
+    <span class="token comment"># Debug-Ausgabe</span>
+    print_status <span class="token string">"Gefundene Python-Dateien:"</span>
+    <span class="token keyword keyword-for">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword keyword-in">in</span> <span class="token string">"<span class="token variable">${PYTHON_FILES<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span><span class="token punctuation">;</span> <span class="token keyword keyword-do">do</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">"  <span class="token variable">$file</span>"</span>
+    <span class="token keyword keyword-done">done</span>
+
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">has_errors</span><span class="token operator">=</span><span class="token number">0</span>
+
+    <span class="token comment"># Führe Tools aus</span>
+    run_tool <span class="token string">"black"</span> <span class="token string">"<span class="token variable">${PYTHON_FILES<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span> <span class="token operator">||</span> <span class="token assign-left variable">has_errors</span><span class="token operator">=</span><span class="token number">1</span>
+    run_tool <span class="token string">"isort"</span> <span class="token string">"<span class="token variable">${PYTHON_FILES<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span> <span class="token operator">||</span> <span class="token assign-left variable">has_errors</span><span class="token operator">=</span><span class="token number">1</span>
+    run_tool <span class="token string">"flake8"</span> <span class="token string">"<span class="token variable">${PYTHON_FILES<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span> <span class="token operator">||</span> <span class="token assign-left variable">has_errors</span><span class="token operator">=</span><span class="token number">1</span>
+    run_tool <span class="token string">"mypy"</span> <span class="token string">"<span class="token variable">${PYTHON_FILES<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span>"</span> <span class="token operator">||</span> <span class="token assign-left variable">has_errors</span><span class="token operator">=</span><span class="token number">1</span>
+
+    <span class="token comment"># Zusammenfassung mit Exit-Code</span>
+    print_header <span class="token string">"Zusammenfassung"</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">[</span> <span class="token variable">$has_errors</span> <span class="token parameter variable">-eq</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword keyword-then">then</span>
+        print_success <span class="token string">"Alle Qualitätsprüfungen erfolgreich abgeschlossen"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">0</span>
+    <span class="token keyword keyword-else">else</span>
+        print_error <span class="token string">"Einige Qualitätsprüfungen haben Fehler gefunden"</span>
+        <span class="token builtin class-name">exit</span> <span class="token number">1</span>
+    <span class="token keyword keyword-fi">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Starte Hauptprogramm</span>
+main <span class="token string">"<span class="token variable">$@</span>"</span>
+</code></pre><p>Nutzung:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">chmod</span> +x check_pythoncode_quality.sh
+<span class="token comment">#source venv/bin/activate</span>
+./check_pythoncode_quality.sh
+</code></pre>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#python-paket-management-unter-macos" class="md-toc-link"><p>Python Paket-Management unter macOS</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#virtuelle-umgebung-einrichten" class="md-toc-link">
+            <p>Virtuelle Umgebung einrichten</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pakete-installieren" class="md-toc-link">
+            <p>Pakete installieren</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pakete-in-requirementstxt-speichern" class="md-toc-link">
+            <p>Pakete in requirements.txt speichern</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pakete-aktualisieren" class="md-toc-link">
+            <p>Pakete aktualisieren</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#troubleshooting" class="md-toc-link">
+            <p>Troubleshooting</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#code-qualität-prüfen" class="md-toc-link">
+            <p>Code-Qualität prüfen</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#pre-commit-tool" class="md-toc-link">
+            <p>pre-commit-Tool</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#projektspezifische-requirementstxt" class="md-toc-link">
+            <p>Projektspezifische requirements.txt</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#projektstruktur" class="md-toc-link"><p>Projektstruktur</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#tipps-und-best-practices" class="md-toc-link">
+            <p>Tipps und Best Practices</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#automatisierungsskript-i" class="md-toc-link">
+            <p>Automatisierungsskript I</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#automatisierungsskript-ii" class="md-toc-link">
+            <p>Automatisierungsskript II</p>
+
+          </a></div>
+        </div>
+      </details>
+
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+
+
+
+
+
+
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+
+
+    </body></html>
