@@ -1,27 +1,35 @@
 # **Methodik zur Textanalyse und Wissensverarbeitung**
 
+bearbeitet am 2024-12-05
+
 ```text
 # KI-Prompts
-Erstelle ausführliche Anki-Fragen mit vollständigem diagnostischem Kontext in Markdown
+Arbeitsblätter: Erstelle ausführliche Anki-Fragen mit vollständigem diagnostischem Kontext in Markdown
 
-Was ist ?, Erkläre
+Was ist ...?, Erkläre ...
 
-Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
-LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
-Makefile zum Kompilieren der LaTeX-Präsentation
-
-Text prüfen und sinnvoll überarbeiten, Redundanzen entfernen und wichtige Ergänzungen vornehmen. Erstelle eine vollständige, didaktisch aufbereitete Version
+Text prüfen: und sinnvoll überarbeiten, Redundanzen entfernen und wichtige Ergänzungen vornehmen.
+Erstelle eine vollständige, didaktisch aufbereitete Version
 mit korrekter Markdown- und LaTeX-Formatierung.
 
 Erstellung eines Exzerpts (beachte exzerpieren-anweisung.md)
 
-Berechnung im Format mit geg., ges. und Lösung durchführen.
-Ausgabe: Markdown und Latex-Mathe
+Mathe: Berechnung im Format mit geg., ges. und Lösung durchführen.
+Ausgabe: mit korrekter Markdown- und LaTeX-Formatierung.
+
+Erstelle ein Abstract mit etwa 200 Wörter
+Erstelle sinnvolle Keywords, um die Hauptaspekte des Textes abzudecken
+Erstelle alle Formeln mit korrekter Markdown- und LaTeX-Formatierung.
 
 Erstellung zweier Mindmaps (strukturierte Liste)
     - Eine für Zahlen, Daten und Fakten
     - Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen
 Visualisierung mit Python und Graphviz (SVG, Pdf)
+
+Beamer:
+- Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+- LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen.
+  - Makefile zum Kompilieren.
 
 
 Fachbegriff-Glossar und Peer Learning: Konzepte schrittweise erklären

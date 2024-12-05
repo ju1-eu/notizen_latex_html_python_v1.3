@@ -147,18 +147,18 @@
 \RequirePackage{csquotes}          % Anführungszeichen
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% 6. Bibliographie-Setup
+%%% 6. Bibliographie-Setup (Springer-Stil angepasst)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[
     backend=biber,
-    authordate,
-    autocite=footnote,
-    dashed=false,
-    isbn=false,
-    language=german
-]{biblatex-chicago}
+    style=authoryear,       % Stil für Springer-authordate
+    autocite=footnote,      % Automatisches Zitieren in Fußnoten
+    dashed=false,           % Kein "---" für wiederholte Autoren
+    isbn=false,             % ISBN ausblenden
+    language=german         % Deutsche Lokalisierung
+]{biblatex}
 
-\ExecuteBibliographyOptions[jurisdiction,legal,legislation]{skipbib=false}
+% Titelanpassung für verschiedene Publikationstypen
 \DeclareFieldFormat[article]{title}{#1\isdot}
 \DeclareFieldFormat[incollection]{title}{#1\isdot}
 \DeclareFieldFormat[inbook]{title}{#1\isdot}
@@ -169,21 +169,25 @@
 \DeclareFieldFormat[misc]{title}{#1\isdot}
 \DeclareFieldFormat{url}{Verfügbar unter <\url{#1}>}
 
+% Spracheinstellungen für deutsche Begriffe
 \DefineBibliographyStrings{german}{%
-  in = {\ifentrytype{inproceedings}{Vortrag bei}{In}},
+  in = {\ifentrytype{inproceedings}{In:}{In:}}, % Übersetzung von "In"
 }
 
+% Anpassungen bei Büchern (z. B. keine Ortsangabe)
 \AtEveryBibitem{%
   \ifentrytype{book}{%
-    \clearlist{location}%
-    \clearfield{pages}%
+    \clearlist{location}  % Verlagsorte entfernen
+    \clearfield{pages}    % Seitenzahl entfernen
   }{}
 }
 
+% URL-Stil und Layout
 \urlstyle{same}
 \setlength{\bibhang}{1em}
-\renewcommand{\bibfont}{\small}
-\setlength{\bibitemsep}{\z@}
+\renewcommand{\bibfont}{\small} % Schriftgröße der Bibliographie
+\setlength{\bibitemsep}{\z@}    % Zeilenabstand in der Bibliographie
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% 7. Farben und Code-Stile

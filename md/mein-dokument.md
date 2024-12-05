@@ -90,10 +90,12 @@ tlmgr list --installed # Installierte Pakete auflisten
 - Fachbuchautor [@dalwigk:2024:fachbuchautor].
 - Online Kurse [@schaffranek:2024:kurse].
 - Hacking und Cyber Security mit KI [@dalwigk:2023:hacking].
-- Python für Einsteiger [@dalwigk:2022:python].
-- Mikrocontroller ESP32 [@brandes:2023:mikrocontroller].
+- Arbeitsblätter Kraftfahrzeugtechnik: Lernfelder 1--4 [@europa:2022:ab1_4].
+- Tabellenbuch Fahrzeugtechnik [@bell:2021:tabellenbuch].
+- Technische Mathematik Fahrzeugtechnik [@bell:2022:mathematik].
+- Motormanagement Sensoren [@schneehage:2021:sensoren].
+- Claude [@claudeAI:2024:ki].
 - Roboterauto [@brandes:2022:esp32].
-- Daten mit Raspberry Pi im Netz speichern und visualisieren [@brandes:2023:daten].
 
 Hier ist ein Text, der eine Fußnote benötigt.[^2]
 
