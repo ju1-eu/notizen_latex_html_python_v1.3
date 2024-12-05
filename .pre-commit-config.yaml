@@ -7,6 +7,7 @@ repos:
       - id: end-of-file-fixer # Stellt sicher, dass Dateien mit einer neuen Zeile enden
       - id: check-yaml # Validiert die YAML-Syntax
       - id: check-added-large-files # Verhindert große Dateien (> 800 KB)
+        args: ['--maxkb=800'] # Erhöht das Limit auf 800 KB
       - id: check-merge-conflict # Warnt vor verbleibenden Merge-Konflikten
       - id: mixed-line-ending # Konvertiert zu Unix-Zeilenenden (LF)
 

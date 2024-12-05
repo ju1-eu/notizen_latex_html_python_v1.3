@@ -14,23 +14,125 @@ tree -L 2 --dirsfirst
 git ls-files
 # Projektstruktur erfolgt nach Python-Projektstandards
 # Ausgabe kommentieren
-├── Mindmap/          # Mindmap-Vorlagen und -Dateien
-    └── Mindmap-Vorlage.tex
-├── Tabellen/         # PDF-Tabellen und Inputlisten
-    ├── PDF/
-    └── input-PDFs.txt
-├── content/          # Projektvorlagen & -Ressourcen
-    ├── Makefile
-    ├── *.tex        # LaTeX-Vorlagen
-    ├── *.html       # HTML-Vorlagen
-    ├── *.bib        # Literaturverzeichnisse
-    └── *.css        # Stylesheets
-├── html/            # HTML-Ausgabedateien
-├── images/          # Bilder und Mindmaps
-├── md/              # Markdown-Quelldateien
-├── python-scripte/  # Automatisierungsskripte
-├── tex/             # LaTeX-Ausgabedateien
-└── venv/            # Python virtuelle Umgebung
+.
+├── Mindmap
+│   └── Mindmap-Vorlage.tex
+├── Tabellen
+│   ├── PDF
+│   └── input-PDFs.txt
+├── content
+│   ├── combined-filter.lua
+│   ├── indent.log
+│   ├── literatur-kfz.bib
+│   ├── literatur-sport.bib
+│   ├── literatur.bib
+│   ├── navigation.css
+│   ├── navigation_v1.3_error.css
+│   ├── scripts.js
+│   ├── vorlage-design-main.cls
+│   ├── vorlage-main.html
+│   ├── vorlage-main.tex
+│   ├── vorlage-nav.html
+│   └── zitierstil-number.csl
+├── html
+├── images
+│   ├── logo
+│   └── mindmap
+├── md
+│   └── mein-dokument.md
+├── python-scripte
+│   ├── KI-Prompts.html
+│   ├── KI-Prompts.md
+│   ├── LICENSE
+│   ├── Python-Paket-Management.html
+│   ├── Python-Paket-Management.md
+│   ├── config.yaml
+│   ├── config1.yaml
+│   ├── config2.yaml
+│   ├── config3.yaml
+│   ├── config4.yaml
+│   ├── create_gallery.py
+│   ├── dateien_inhaltsverzeichnis.py
+│   ├── dokumentation.py
+│   ├── extract_pdf_images.py
+│   ├── exzerpieren-anweisung.html
+│   ├── exzerpieren-anweisung.md
+│   ├── git_hilfsprogramm.py
+│   ├── html1_konverter_pandoc.py
+│   ├── html3_navigation.py
+│   ├── html4_entfernen.py
+│   ├── image_resizer.py
+│   ├── latex_convert1.py
+│   ├── latexcode_entfernen2.py
+│   ├── pdf_extractor.py
+│   ├── python-config.md
+│   ├── requirements.txt
+│   ├── suchen_ersetzen.py
+│   ├── svg_graphviz_v1.py
+│   ├── sync_tex.py
+│   └── youtube_text_extraktor.py
+├── tests
+│   ├── __pycache__
+│   ├── conftest.py
+│   └── test_project.py
+├── tex
+├── venv
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   └── pyvenv.cfg
+├── Makefile
+├── README.md
+├── check_pythoncode_quality.sh
+├── config.yaml
+├── mein-dokument.pdf
+├── mein-dokument.tex
+├── navigation.css
+├── pyproject.toml
+├── requirements-dev.in
+├── requirements-dev.txt
+├── requirements.in
+├── requirements.txt
+├── scriptauswahl.py
+├── setup.cfg
+└── update_python_packages.sh
+```
+
+## update
+
+```bash
+# Latex Schrift und update
+sudo tlmgr update --all
+fc-cache -f -v
+# https://fonts.google.com/specimen/Source+Sans+3
+sudo tlmgr install fontspec
+cp SourceSans3-*.ttf /Users/jan/Library/Fonts/
+fc-cache -f -v
+fc-list | grep "Source Sans"
+
+# HTML & PDF
+source venv/bin/activate
+python scriptauswahl.py
+
+
+# Git
+git init
+git add .
+git commit -m"Projekt start"
+#oder git commit -m"Projekt update"
+git st
+git push
+git lg
+
+# Terminal
+brew update # brew install graphiz
+brew upgrade
+brew doctor
+brew cleanup
+# Server
+brew services list
+brew services restart php
+brew services restart mysql
 ```
 
 ## Tools

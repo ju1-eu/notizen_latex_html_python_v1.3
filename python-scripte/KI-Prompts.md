@@ -1,5 +1,33 @@
 # **Methodik zur Textanalyse und Wissensverarbeitung**
 
+```text
+# KI-Prompts
+Erstelle ausführliche Anki-Fragen mit vollständigem diagnostischem Kontext in Markdown
+
+Was ist ?, Erkläre
+
+Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+Makefile zum Kompilieren der LaTeX-Präsentation
+
+Text prüfen und sinnvoll überarbeiten, Redundanzen entfernen und wichtige Ergänzungen vornehmen. Erstelle eine vollständige, didaktisch aufbereitete Version
+mit korrekter Markdown- und LaTeX-Formatierung.
+
+Erstellung eines Exzerpts (beachte exzerpieren-anweisung.md)
+
+Berechnung im Format mit geg., ges. und Lösung durchführen.
+Ausgabe: Markdown und Latex-Mathe
+
+Erstellung zweier Mindmaps (strukturierte Liste)
+    - Eine für Zahlen, Daten und Fakten
+    - Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen
+Visualisierung mit Python und Graphviz (SVG, Pdf)
+
+
+Fachbegriff-Glossar und Peer Learning: Konzepte schrittweise erklären
+HISTORISCHE ENTWICKLUNG
+CONCEPT MAPPING UND VERNETZTES DENKEN
+```
 
 ```mermaid
 mindmap
@@ -203,70 +231,6 @@ _Hinweis: Dieses Glossar wird kontinuierlich erweitert und aktualisiert._
 - Ertselle ein Code-Beschreibung
 - Erkläre den Code
 
-```python
-"""
-Modul zur Analyse von Fahrzeugdaten und Wartungsinformationen
-
-Dieses Modul enthält Funktionen zur Verarbeitung und Analyse von:
-- Batteriedaten
-- Wartungsintervallen
-- Diagnoseergebnissen
-"""
-
-class FahrzeugAnalyse:
-    """Klasse zur Analyse von Fahrzeugdaten."""
-
-    def __init__(self, fahrzeug_id):
-        """
-        Initialisiert die Fahrzeuganalyse.
-
-        Args:
-            fahrzeug_id (str): Eindeutige Fahrzeug-Identifikationsnummer
-        """
-        self.fahrzeug_id = fahrzeug_id
-        self.wartungshistorie = []
-
-    def batterie_analyse(self, messwerte):
-        """
-        Analysiert Batteriedaten und erstellt einen Diagnosebericht.
-
-        Args:
-            messwerte (dict): Dictionary mit Batteriekennwerten
-
-        Returns:
-            dict: Analyseergebnisse mit Handlungsempfehlungen
-        """
-        ergebnisse = {
-            'status': self._bewerte_batteriezustand(messwerte),
-            'empfehlungen': self._erstelle_empfehlungen(messwerte)
-        }
-        return ergebnisse
-
-    def _bewerte_batteriezustand(self, messwerte):
-        """
-        Interne Methode zur Bewertung des Batteriezustands.
-
-        Args:
-            messwerte (dict): Batteriekennwerte
-
-        Returns:
-            str: Bewertung des Batteriezustands
-        """
-        # Implementierung der Bewertungslogik
-        pass
-
-# Beispiel für die Verwendung
-if __name__ == "__main__":
-    analyse = FahrzeugAnalyse("WDD1234567")
-    testdaten = {
-        'spannung': 380.5,
-        'kapazität': 75.3,
-        'temperatur': 25.4
-    }
-    ergebnis = analyse.batterie_analyse(testdaten)
-    print(f"Analyseergebnis: {ergebnis}")
-```
-
 
 \newpage
 ## Erarbeitung und Vertiefung von Fachtexten
@@ -301,3 +265,65 @@ if __name__ == "__main__":
     - SYSTEMATISCHE WIEDERHOLUNG
       - Prinzip "spaced repetition" Konzepte in größeren Zeitabständen wiederholen
     - Peer Learning: Konzepte erklären
+
+## Erarbeitung und Vertiefung von Fachtexten II
+
+Hast du Zugriff auf die hochgeladenen Dateien
+Texterkennung aus den Bildern erstellen oder Bilder analysieren oder eine Textbeschreibung erstellen
+Detaillierte Analyse und Didaktische Aufbereitung erstellen
+
+Erstelle eine vollständige, didaktisch aufbereitete Version
+mit korrekter Markdown- und LaTeX-Formatierung
+
+Erstelle ein didaktisch aufbereitetes Exzerpt gemäß den Vorgaben, strukturiert nach den Hauptkomponenten
+Erstelle einen Exzerpt zum Thema: Einparkhilfen und nutze die Vorlage
+Erstelle ein Exzerpt zum Thema: Parkassistenten und nutze die Vorlage (recherchiere Mercedes Benz, VW, Wikipedia, falls notwendig)
+
+Erstellung zweier Mindmaps (strukturierte Liste)
+    - Eine für Zahlen, Daten und Fakten
+    - Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen
+
+Fachbegriff-Glossar
+Peer Learning: Konzepte schrittweise erklären (Schrittweise)
+Rolle des Moderators: Eine Person übernimmt die Rolle des Moderators und strukturiert die Diskussion.
+Ziel: Komplexe Themen in verständlicher Sprache zu präsentieren.
+Nachfragen und Diskussion: Gruppe stellt Verständnisfragen. Teilnehmende diskutieren kritische Punkte, um gemeinsam Lösungen zu entwickeln.
+
+Grundlagenvermittlung
+* Erklärung des PDC-Funktionsprinzips
+* Demonstration des Echolot-Verfahrens
+* Visualisierung der Komponenten
+
+Erstelle alle Fragen mit Lösungen
+Das Arbeitsblatt mit den Fragen und Antworten in Markdown erstellen
+Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+Makefile zum Kompilieren der LaTeX-Präsentation
+
+
+Erkläre "Park Assist" (VW) und "Parkassistent" (AUDI) und "Aktiven Park-Assistenten mit PARKTRONIC" (Mercedes-Benz)
+Prüfe und recherchiere
+Recherchiere HISTORISCHE ENTWICKLUNG
+Zukünftige Entwicklungen bei Parkassistenzsystemen
+
+CONCEPT MAPPING UND VERNETZTES DENKEN
+
+Erstellung eines Concept Maps (Schrittweise):
+
+Zentrales Thema bestimmen: z. B. "Einparkhilfe".
+Kernkonzepte identifizieren: z. B. "Sensorik", "Verkabelung", "Kalibrierung".
+Verbindungen definieren: Beziehungen zwischen Konzepten durch Pfeile kennzeichnen.
+Hierarchie erstellen: Von allgemeinen zu spezifischen Informationen.
+
+Erstellung eines vernetzten Modells (Schrittweise):
+
+Zentrales Problem identifizieren: z. B. "Fehlfunktion".
+Beteiligte Elemente sammeln: z. B. Sensoren, Steuergerät, Kabel.
+Beziehungen darstellen: Pfeile zeigen Ursache-Wirkungs-Beziehungen.
+Rückkopplung analysieren: Identifizieren von Kreisläufen, die Probleme verstärken oder lösen können.
+
+hochgeladenen Bilder erneut analysieren, um den Schaltplan und die zugehörigen Komponenten zu extrahieren.
+Erklärung des Schaltplans für die Beleuchtungsanlage mit Bezug auf die Einparkhilfe
+visuelle Rekonstruktion des Schaltplans für die Einparkhilfe
+
+Kritische Reflexion der 4 Bilder zur Einparkhilfe

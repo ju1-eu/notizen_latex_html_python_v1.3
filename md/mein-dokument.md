@@ -31,7 +31,7 @@ Fußnote.[^1]
 
 ## Git
 
-![Was ist Git?](images/Mindmap-Git.pdf){width=60%}
+![Was ist Git?](images/mindmap/Mindmap-Git.pdf){width=60%}
 
 ```bash
 # GitHub-Anmeldung und Zugangsdaten zwischenspeichern
@@ -136,11 +136,11 @@ Hier ist ein Text, der eine Fußnote benötigt.[^2]
 
 ## Bilder
 
-![Logo 2](images/Logo/Logo2.pdf){width=40%}
+![Logo 2](images/logo/Logo2.pdf){width=40%}
 
-![Was ist eine Mindmap?](images/Mindmap.pdf){width=60%}
+![Was ist eine Mindmap?](images/mindmap/Mindmap.pdf){width=60%}
 
-![Was ist Python?](images/Mindmap-Python.pdf){width=60%}
+![Was ist Python?](images/mindmap/Mindmap-Python.pdf){width=60%}
 
 ## Links
 
@@ -173,7 +173,7 @@ int main() {
 // Markdown
 [Google](https://www.google.com)
 
-![Logo 2](images/Logo/Logo2.pdf){width=50%}
+![Logo 2](images/logo/Logo2.pdf){width=50%}
 ```
 
 # Dokumentenverarbeitung LaTeX/HTML/Python

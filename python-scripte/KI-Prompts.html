@@ -25,7 +25,33 @@
       <div class="crossnote markdown-preview  ">
       <div>
 <h1 id="methodik-zur-textanalyse-und-wissensverarbeitung"><strong>Methodik zur Textanalyse und Wissensverarbeitung</strong> </h1>
-<div class="mermaid">mindmap
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code># KI-Prompts
+Erstelle ausführliche Anki-Fragen mit vollständigem diagnostischem Kontext in Markdown
+
+Was ist ?, Erkläre
+
+Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen
+Makefile zum Kompilieren der LaTeX-Präsentation
+
+Text prüfen und sinnvoll überarbeiten, Redundanzen entfernen und wichtige Ergänzungen vornehmen. Erstelle eine vollständige, didaktisch aufbereitete Version
+mit korrekter Markdown- und LaTeX-Formatierung.
+
+Erstellung eines Exzerpts (beachte exzerpieren-anweisung.md)
+
+Berechnung im Format mit geg., ges. und Lösung durchführen.
+Ausgabe: Markdown und Latex-Mathe
+
+Erstellung zweier Mindmaps (strukturierte Liste)
+    - Eine für Zahlen, Daten und Fakten
+    - Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen
+Visualisierung mit Python und Graphviz (SVG, Pdf)
+
+
+Fachbegriff-Glossar und Peer Learning: Konzepte schrittweise erklären
+HISTORISCHE ENTWICKLUNG
+CONCEPT MAPPING UND VERNETZTES DENKEN
+</code></pre><div class="mermaid">mindmap
   root((Textanalyse &amp;
   Wissensverarbeitung))
     Digitale Werkzeuge
@@ -238,68 +264,7 @@
 <li>Ertselle ein Code-Beschreibung</li>
 <li>Erkläre den Code</li>
 </ul>
-<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token triple-quoted-string string">"""
-Modul zur Analyse von Fahrzeugdaten und Wartungsinformationen
-
-Dieses Modul enthält Funktionen zur Verarbeitung und Analyse von:
-- Batteriedaten
-- Wartungsintervallen
-- Diagnoseergebnissen
-"""</span>
-
-<span class="token keyword keyword-class">class</span> <span class="token class-name">FahrzeugAnalyse</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""Klasse zur Analyse von Fahrzeugdaten."""</span>
-
-    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> fahrzeug_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        Initialisiert die Fahrzeuganalyse.
-
-        Args:
-            fahrzeug_id (str): Eindeutige Fahrzeug-Identifikationsnummer
-        """</span>
-        self<span class="token punctuation">.</span>fahrzeug_id <span class="token operator">=</span> fahrzeug_id
-        self<span class="token punctuation">.</span>wartungshistorie <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-    <span class="token keyword keyword-def">def</span> <span class="token function">batterie_analyse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> messwerte<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        Analysiert Batteriedaten und erstellt einen Diagnosebericht.
-
-        Args:
-            messwerte (dict): Dictionary mit Batteriekennwerten
-
-        Returns:
-            dict: Analyseergebnisse mit Handlungsempfehlungen
-        """</span>
-        ergebnisse <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">'status'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>_bewerte_batteriezustand<span class="token punctuation">(</span>messwerte<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token string">'empfehlungen'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>_erstelle_empfehlungen<span class="token punctuation">(</span>messwerte<span class="token punctuation">)</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword keyword-return">return</span> ergebnisse
-
-    <span class="token keyword keyword-def">def</span> <span class="token function">_bewerte_batteriezustand</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> messwerte<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        Interne Methode zur Bewertung des Batteriezustands.
-
-        Args:
-            messwerte (dict): Batteriekennwerte
-
-        Returns:
-            str: Bewertung des Batteriezustands
-        """</span>
-        <span class="token comment"># Implementierung der Bewertungslogik</span>
-        <span class="token keyword keyword-pass">pass</span>
-
-<span class="token comment"># Beispiel für die Verwendung</span>
-<span class="token keyword keyword-if">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    analyse <span class="token operator">=</span> FahrzeugAnalyse<span class="token punctuation">(</span><span class="token string">"WDD1234567"</span><span class="token punctuation">)</span>
-    testdaten <span class="token operator">=</span> <span class="token punctuation">{</span>
-        <span class="token string">'spannung'</span><span class="token punctuation">:</span> <span class="token number">380.5</span><span class="token punctuation">,</span>
-        <span class="token string">'kapazität'</span><span class="token punctuation">:</span> <span class="token number">75.3</span><span class="token punctuation">,</span>
-        <span class="token string">'temperatur'</span><span class="token punctuation">:</span> <span class="token number">25.4</span>
-    <span class="token punctuation">}</span>
-    ergebnis <span class="token operator">=</span> analyse<span class="token punctuation">.</span>batterie_analyse<span class="token punctuation">(</span>testdaten<span class="token punctuation">)</span>
-    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Analyseergebnis: </span><span class="token interpolation"><span class="token punctuation">{</span>ergebnis<span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-</code></pre><p>\newpage</p>
+<p>\newpage</p>
 <h2 id="erarbeitung-und-vertiefung-von-fachtexten">Erarbeitung und Vertiefung von Fachtexten </h2>
 <ol>
 <li>
@@ -353,6 +318,53 @@ Dieses Modul enthält Funktionen zur Verarbeitung und Analyse von:
 </ul>
 </li>
 </ol>
+<h2 id="erarbeitung-und-vertiefung-von-fachtexten-ii">Erarbeitung und Vertiefung von Fachtexten II </h2>
+<p>Hast du Zugriff auf die hochgeladenen Dateien<br>
+Texterkennung aus den Bildern erstellen oder Bilder analysieren oder eine Textbeschreibung erstellen<br>
+Detaillierte Analyse und Didaktische Aufbereitung erstellen</p>
+<p>Erstelle eine vollständige, didaktisch aufbereitete Version<br>
+mit korrekter Markdown- und LaTeX-Formatierung</p>
+<p>Erstelle ein didaktisch aufbereitetes Exzerpt gemäß den Vorgaben, strukturiert nach den Hauptkomponenten<br>
+Erstelle einen Exzerpt zum Thema: Einparkhilfen und nutze die Vorlage<br>
+Erstelle ein Exzerpt zum Thema: Parkassistenten und nutze die Vorlage (recherchiere Mercedes Benz, VW, Wikipedia, falls notwendig)</p>
+<p>Erstellung zweier Mindmaps (strukturierte Liste)<br>
+- Eine für Zahlen, Daten und Fakten<br>
+- Eine für Fach- und Schlüsselwörter mit detaillierten Erklärungen</p>
+<p>Fachbegriff-Glossar<br>
+Peer Learning: Konzepte schrittweise erklären (Schrittweise)<br>
+Rolle des Moderators: Eine Person übernimmt die Rolle des Moderators und strukturiert die Diskussion.<br>
+Ziel: Komplexe Themen in verständlicher Sprache zu präsentieren.<br>
+Nachfragen und Diskussion: Gruppe stellt Verständnisfragen. Teilnehmende diskutieren kritische Punkte, um gemeinsam Lösungen zu entwickeln.</p>
+<p>Grundlagenvermittlung</p>
+<ul>
+<li>Erklärung des PDC-Funktionsprinzips</li>
+<li>Demonstration des Echolot-Verfahrens</li>
+<li>Visualisierung der Komponenten</li>
+</ul>
+<p>Erstelle alle Fragen mit Lösungen<br>
+Das Arbeitsblatt mit den Fragen und Antworten in Markdown erstellen<br>
+Die PowerPoint-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen<br>
+LaTeX-Präsentation mit den Fragen und Antworten auf separaten Folien erstellen<br>
+Makefile zum Kompilieren der LaTeX-Präsentation</p>
+<p>Erkläre "Park Assist" (VW) und "Parkassistent" (AUDI) und "Aktiven Park-Assistenten mit PARKTRONIC" (Mercedes-Benz)<br>
+Prüfe und recherchiere<br>
+Recherchiere HISTORISCHE ENTWICKLUNG<br>
+Zukünftige Entwicklungen bei Parkassistenzsystemen</p>
+<p>CONCEPT MAPPING UND VERNETZTES DENKEN</p>
+<p>Erstellung eines Concept Maps (Schrittweise):</p>
+<p>Zentrales Thema bestimmen: z. B. "Einparkhilfe".<br>
+Kernkonzepte identifizieren: z. B. "Sensorik", "Verkabelung", "Kalibrierung".<br>
+Verbindungen definieren: Beziehungen zwischen Konzepten durch Pfeile kennzeichnen.<br>
+Hierarchie erstellen: Von allgemeinen zu spezifischen Informationen.</p>
+<p>Erstellung eines vernetzten Modells (Schrittweise):</p>
+<p>Zentrales Problem identifizieren: z. B. "Fehlfunktion".<br>
+Beteiligte Elemente sammeln: z. B. Sensoren, Steuergerät, Kabel.<br>
+Beziehungen darstellen: Pfeile zeigen Ursache-Wirkungs-Beziehungen.<br>
+Rückkopplung analysieren: Identifizieren von Kreisläufen, die Probleme verstärken oder lösen können.</p>
+<p>hochgeladenen Bilder erneut analysieren, um den Schaltplan und die zugehörigen Komponenten zu extrahieren.<br>
+Erklärung des Schaltplans für die Beleuchtungsanlage mit Bezug auf die Einparkhilfe<br>
+visuelle Rekonstruktion des Schaltplans für die Einparkhilfe</p>
+<p>Kritische Reflexion der 4 Bilder zur Einparkhilfe</p>
 </div>
       </div>
       <div class="md-sidebar-toc">
@@ -492,6 +504,10 @@ Dieses Modul enthält Funktionen zur Verarbeitung und Analyse von:
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#erarbeitung-und-vertiefung-von-fachtexten" class="md-toc-link">
             <p>Erarbeitung und Vertiefung von Fachtexten</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#erarbeitung-und-vertiefung-von-fachtexten-ii" class="md-toc-link">
+            <p>Erarbeitung und Vertiefung von Fachtexten II</p>
 
           </a></div>
         </div>
